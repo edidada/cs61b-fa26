@@ -13,6 +13,8 @@ import java.util.List;
  *  queue in the order given by g.neighbors(). */
 public class Lab9BFS {
     private final Lab9Graph g;
+    private final java.util.Map<String, Integer> distances = new java.util.HashMap<>();
+    private final java.util.List<String> visitedOrder = new java.util.ArrayList<>();
 
     /** Runs breadth first search on g starting from start.
      *  Throws IllegalArgumentException if start is not a node of g. */
@@ -21,7 +23,19 @@ public class Lab9BFS {
             throw new IllegalArgumentException("no such node: " + start);
         }
         this.g = g;
-        // TODO: Replace this with your implementation.
+        java.util.ArrayDeque<String> queue = new java.util.ArrayDeque<>();
+        distances.put(start, 0);
+        queue.addLast(start);
+        while (!queue.isEmpty()) {
+            String u = queue.removeFirst();
+            visitedOrder.add(u);
+            for (String v : g.neighbors(u)) {
+                if (!distances.containsKey(v)) {
+                    distances.put(v, distances.get(u) + 1);
+                    queue.addLast(v);
+                }
+            }
+        }
     }
 
     /** Returns true if s was reached by the search, i.e. there is a path
@@ -31,8 +45,7 @@ public class Lab9BFS {
         if (!g.nodes().contains(s)) {
             throw new IllegalArgumentException("no such node: " + s);
         }
-        // TODO: Replace this with your implementation.
-        return false;
+        return distances.containsKey(s);
     }
 
     /** Returns the distance from start to s, i.e. the number of edges on a
@@ -43,15 +56,13 @@ public class Lab9BFS {
         if (!g.nodes().contains(s)) {
             throw new IllegalArgumentException("no such node: " + s);
         }
-        // TODO: Replace this with your implementation.
-        return -1;
+        return distances.getOrDefault(s, -1);
     }
 
     /** Returns the BFS order of the nodes reachable from start: the order
      *  in which nodes were removed from the queue. The first node in the
      *  list is always start. */
     public List<String> order() {
-        // TODO: Replace this with your implementation.
-        return null;
+        return new java.util.ArrayList<>(visitedOrder);
     }
 }

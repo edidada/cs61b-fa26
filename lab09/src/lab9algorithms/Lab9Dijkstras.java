@@ -29,21 +29,42 @@ public class Lab9Dijkstras {
             throw new IllegalArgumentException("no such node: " + source);
         }
         this.source = source;
-        // TODO: Replace this with your implementation.
+        for (String u : g.nodes()) {
+            for (String v : g.neighbors(u)) {
+                if (g.edgeWeight(u, v) < 0) { throw new IllegalArgumentException("Negative edge weight"); }
+            }
+        }
+        ExtrinsicMinPQ fringe = new ExtrinsicMinPQ();
+        java.util.Set<String> settled = new java.util.HashSet<>();
+        distTo.put(source, 0);
+        fringe.add(source, 0);
+        while (fringe.size() > 0) {
+            String u = fringe.removeSmallest();
+            settled.add(u);
+            for (String v : g.neighbors(u)) {
+                if (settled.contains(v)) { continue; }
+                int candidate = Math.addExact(distTo.get(u), g.edgeWeight(u, v));
+                if (!distTo.containsKey(v) || candidate < distTo.get(v)) {
+                    distTo.put(v, candidate);
+                    edgeTo.put(v, u);
+                    if (fringe.contains(v)) { fringe.changePriority(v, candidate); }
+                    else { fringe.add(v, candidate); }
+                }
+            }
+        }
     }
 
     /** Returns true if there is a path from the source to v. The source
      *  always has a path to itself. */
     public boolean hasPathTo(String v) {
-        // TODO: Replace this with your implementation.
-        return false;
+        return distTo.containsKey(v);
     }
 
     /** Returns the total weight of the shortest path from the source to v.
      *  Throws IllegalArgumentException if there is no path to v. */
     public int distTo(String v) {
-        // TODO: Replace this with your implementation.
-        return 0;
+        if (!hasPathTo(v)) { throw new IllegalArgumentException("Unreachable node: " + v); }
+        return distTo.get(v);
     }
 
     /** Returns the shortest path from the source to v as a list of nodes,
@@ -51,7 +72,9 @@ public class Lab9Dijkstras {
      *  itself is the one-element list [source].
      *  Throws IllegalArgumentException if there is no path to v. */
     public List<String> shortestPathTo(String v) {
-        // TODO: Replace this with your implementation.
-        return null;
+        if (!hasPathTo(v)) { throw new IllegalArgumentException("Unreachable node: " + v); }
+        java.util.LinkedList<String> path = new java.util.LinkedList<>();
+        for (String u = v; u != null; u = edgeTo.get(u)) { path.addFirst(u); }
+        return new java.util.ArrayList<>(path);
     }
 }

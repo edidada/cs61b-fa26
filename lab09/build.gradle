@@ -1,0 +1,1 @@
+dependencies { implementation 'io.javalin:javalin:7.2.3'; runtimeOnly 'org.slf4j:slf4j-simple:2.0.17' }

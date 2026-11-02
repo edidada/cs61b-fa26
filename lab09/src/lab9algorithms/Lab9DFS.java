@@ -29,7 +29,24 @@ public class Lab9DFS {
             throw new IllegalArgumentException("no such node: " + start);
         }
         this.g = g;
-        // TODO: Run the search from start, filling in marked, preOrder, and postOrder.
+        record Frame(String node, java.util.Iterator<String> neighbors) { }
+        java.util.ArrayDeque<Frame> stack = new java.util.ArrayDeque<>();
+        marked.add(start);
+        preOrder.add(start);
+        stack.push(new Frame(start, g.neighbors(start).iterator()));
+        while (!stack.isEmpty()) {
+            Frame frame = stack.peek();
+            if (!frame.neighbors().hasNext()) {
+                postOrder.add(frame.node());
+                stack.pop();
+            } else {
+                String v = frame.neighbors().next();
+                if (marked.add(v)) {
+                    preOrder.add(v);
+                    stack.push(new Frame(v, g.neighbors(v).iterator()));
+                }
+            }
+        }
     }
 
     /** Returns true if s was reached by the search, i.e. there is a path

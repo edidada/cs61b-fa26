@@ -1,0 +1,38 @@
+name: CS61B Lab 09
+on:
+  push:
+    branches: [edidada/lab09]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+      - run: python scripts/setup_dependencies.py
+      - if: matrix.tool == 'maven'
+        run: mvn -B -pl lab09 test
+      - if: matrix.tool == 'gradle'
+        run: gradle :lab09:test --no-daemon
+      - name: Exercise actual visualizer HTTP endpoints
+        if: matrix.tool == 'maven'
+        run: python scripts/smoke_graph.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lab09-${{ matrix.tool }}-reports
+          path: |
+            lab09/target/surefire-reports/
+            lab09/build/reports/tests/
+            lab09/results/
