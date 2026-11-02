@@ -1,11 +1,11 @@
 """Fetch and verify the exact official course algs4 blob; no local compilation."""
-import base64, hashlib, json, os, subprocess, urllib.request
+import hashlib, os, subprocess, urllib.request
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 blob='e1703efb7a09c244fdfb0ee3d08aa7c28e1b408c'
-request=urllib.request.Request('https://api.github.com/repos/Berkeley-CS61B/library-fa26/git/blobs/'+blob,headers={'User-Agent':'cs61b-course-dependencies'})
+request=urllib.request.Request('https://raw.githubusercontent.com/Berkeley-CS61B/library-fa26/7d9a380f3d881630a8cbf6382945a2d27618e728/algs4.jar',headers={'User-Agent':'cs61b-course-dependencies'})
 with urllib.request.urlopen(request,timeout=60) as response:
-    data=base64.b64decode(json.load(response)['content'])
+    data=response.read()
 assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==blob, 'Official jar hash mismatch'
 folder=root/'.course-libs'; folder.mkdir(exist_ok=True)
 jar=folder/'algs4.jar'; jar.write_bytes(data)
