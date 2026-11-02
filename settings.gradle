@@ -1,0 +1,2 @@
+rootProject.name = 'cs61b-fa26'
+include 'lab02'

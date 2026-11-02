@@ -65,3 +65,9 @@ proj4*/*.txt
 # Please don't unless you know what you're doing
 *.iml
 **/.idea/**
+
+._*
+**/target/
+**/build/
+.gradle/
+.course-libs/
