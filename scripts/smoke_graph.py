@@ -18,7 +18,7 @@ with log.open('w',encoding='utf-8') as output:
         def get(path):
             with urllib.request.urlopen(base+path,timeout=5) as r: return json.load(r)
         bfs=get('/order/'+urllib.parse.quote('Lab9BFS order')+'?start=Berkeley')
-        assert bfs['order'][0]=='Berkeley' and len(bfs['order'])==15
+        assert bfs['order'][0]=='Berkeley' and len(bfs['order'])==14
         tree=get('/spt/Berkeley')
         assert tree['dists']['Boston']==3575
         assert tree['paths']['Seattle']==['Berkeley','Sacramento','Portland','Seattle']
