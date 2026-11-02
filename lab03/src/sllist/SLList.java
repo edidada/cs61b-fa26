@@ -30,7 +30,12 @@ public class SLList {
      *  results in 5 -> 10 -> 6 -> 2, and insert(10, 7) results in
      *  5 -> 6 -> 2 -> 10. */
     public void insert(int x, int position) {
-        // TODO: Fill in this method
+        IntNode previous = sentinel;
+        for (int i = 0; i < position && previous.next != null; i++) {
+            previous = previous.next;
+        }
+        previous.next = new IntNode(x, previous.next);
+        size++;
     }
 
     /** Returns the items of this list as an array (provided for testing). */

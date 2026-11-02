@@ -12,20 +12,25 @@ public class IntList {
     /** Replaces all instances of a with b in L.
      *  Modifies the passed list. Iterative (no recursion allowed). */
     public static void replaceID(IntList L, int a, int b) {
-        // TODO: Fill in this method (destructive, iterative)
+        for (IntList p = L; p != null; p = p.rest) {
+            if (p.first == a) { p.first = b; }
+        }
     }
 
     /** Returns a copy of L, but with all instances of a replaced by b.
      *  Does not modify the passed list. Recursive. */
     public static IntList replaceRND(IntList L, int a, int b) {
-        // TODO: Fill in this method (non-destructive, recursive)
-        return null;
+        if (L == null) { return null; }
+        return new IntList(L.first == a ? b : L.first, replaceRND(L.rest, a, b));
     }
 
     /** Replaces all instances of a with b in L.
      *  Modifies the passed list. Recursive. */
     public static void replaceRD(IntList L, int a, int b) {
-        // TODO: Fill in this method (destructive, recursive)
+        if (L != null) {
+            if (L.first == a) { L.first = b; }
+            replaceRD(L.rest, a, b);
+        }
     }
 
     /** Adds nodes to this list so that the resulting sequence is a stair,
@@ -34,7 +39,12 @@ public class IntList {
      *  If the sequence is already a stair, does nothing. Returns this list.
      *  Example: [2, 5, 3].stairify() results in [2, 3, 4, 5, 4, 3]. */
     public IntList stairify() {
-        // TODO: Fill in this method (extra, exam-level practice)
+        for (IntList p = this; p.rest != null; p = p.rest) {
+            long delta = (long) p.rest.first - p.first;
+            if (delta > 1 || delta < -1) {
+                p.rest = new IntList(p.first + (delta > 0 ? 1 : -1), p.rest);
+            }
+        }
         return this;
     }
 
