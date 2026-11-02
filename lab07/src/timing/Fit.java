@@ -68,14 +68,14 @@ public class Fit {
         double b = fit[1];
         double rSquared = fit[2];
         if (Double.isNaN(a)) {
-            IO.println("Can't fit " + f.label() + " to this data: the values of "
+            System.out.println("Can't fit " + f.label() + " to this data: the values of "
                     + f.label() + " are too large for these N.");
             plot(td);
             return;
         }
         String legend = String.format("best fit: %.3g * %s + %.3g   (R^2 = %.3f)",
                 a, f.label(), b, rSquared);
-        IO.println(td.name() + " | " + legend);
+        System.out.println(td.name() + " | " + legend);
 
         List<TimingData.Trial> trials = td.trials();
         double minN = trials.get(0).N();

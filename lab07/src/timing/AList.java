@@ -34,7 +34,7 @@ public class AList<Item> {
     /** Inserts X into the back of the list. */
     public void addLast(Item x) {
         if (size == items.length) {
-            resize(size + 1); // TODO: Change the resize strategy
+            resize(items.length * 2); // Geometric growth gives amortized constant append.
         }
 
         items[size] = x;

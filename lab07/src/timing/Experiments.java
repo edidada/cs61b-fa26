@@ -9,7 +9,7 @@ public class Experiments {
 
     private static void printTimingTable(TimingData data) {
         System.out.printf("%12s %12s %12s %12s\n", "N", "time (s)", "# ops", "microsec/op");
-        IO.println("------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------");
         for (TimingData.Trial t : data.trials()) {
             System.out.printf("%12d %12.2f %12d %12.2f\n", t.N(), t.seconds(), t.ops(), t.usPerOp());
         }
@@ -55,54 +55,60 @@ public class Experiments {
         return td;
     }
 
+    private static volatile long sink;
+
+    private static TimingData measure(String name, java.util.function.IntToLongFunction function,
+                                      int first, int last) {
+        TimingData result = new TimingData(name);
+        for (int n = first; n <= last; n *= 2) {
+            for (int warm = 0; warm < 3; warm++) { sink = function.applyAsLong(n); }
+            Stopwatch watch = new Stopwatch();
+            int operations = 0;
+            do {
+                sink = function.applyAsLong(n);
+                operations++;
+            } while (watch.elapsedTime() < 0.05 && operations < 100000);
+            result.add(n, operations, watch.elapsedTime());
+        }
+        return result;
+    }
+
     public static TimingData timeSp16fp9p1() {
-        TimingData td = new TimingData("sp16fp9p1");
-
-        // TODO: YOUR CODE HERE
-
-        return td;
+        return measure("sp16fp9p1", FunctionsToBeTimed::sp16fp9p1, 128, 4096);
     }
-
     public static TimingData timeSp16fp9p2() {
-        TimingData td = new TimingData("sp16fp9p2");
-
-        // TODO: YOUR CODE HERE
-
-        return td;
+        return measure("sp16fp9p2", FunctionsToBeTimed::sp16fp9p2, 1024, 262144);
     }
-
     public static TimingData timeMsf() {
-        TimingData td = new TimingData("msf");
-
-        // TODO: YOUR CODE HERE
-
-        return td;
+        return measure("msf", FunctionsToBeTimed::msf, 1024, 262144);
     }
-
     public static TimingData timeSp16fp9p5() {
-        TimingData td = new TimingData("sp16fp9p5");
-
-        // TODO: YOUR CODE HERE
-
-        return td;
+        return measure("sp16fp9p5", FunctionsToBeTimed::sp16fp9p5, 128, 4096);
     }
-
     public static TimingData timeAListConstruction() {
-        TimingData td = new TimingData("AList addLast construction");
-
-        // TODO: YOUR CODE HERE
-
-        return td;
+        return measure("AList construction", n -> {
+            AList<Integer> list = new AList<>();
+            for (int i = 0; i < n; i++) { list.addLast(i); }
+            return list.getLast() + list.size();
+        }, 1000, 1024000);
     }
 
-    void main() {
-        // TODO: Modify the following line to change the experiment you're running
-        TimingData td = exampleListExperiment();
-
-        printTimingTable(td);
-        Fit.plot(td);
-
-        // Once you have timing data for sp16fp9p1, try drawing a best-fit curve over it, e.g.
-        // Fit.plotWithFit(td, Fit.Growth.N_SQUARED);
+    public static void main(String[] args) throws java.io.IOException {
+        java.nio.file.Path output = java.nio.file.Path.of("results");
+        java.nio.file.Files.createDirectories(output);
+        TimingData[] experiments = {timeSp16fp9p1(), timeSp16fp9p2(), timeMsf(),
+                                   timeSp16fp9p5(), timeAListConstruction()};
+        for (int i = 0; i < experiments.length; i++) {
+            TimingData data = experiments[i];
+            System.out.println(data.name());
+            printTimingTable(data);
+            java.util.List<String> rows = new java.util.ArrayList<>();
+            rows.add("N,seconds,operations,microseconds_per_operation");
+            for (TimingData.Trial trial : data.trials()) {
+                rows.add(trial.N() + "," + trial.seconds() + "," + trial.ops() + "," + trial.usPerOp());
+            }
+            java.nio.file.Files.write(output.resolve("experiment-" + i + ".csv"), rows);
+            Fit.savePlot(data, output.resolve("experiment-" + i).toString());
+        }
     }
 }

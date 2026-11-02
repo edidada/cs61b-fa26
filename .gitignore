@@ -71,3 +71,4 @@ proj4*/*.txt
 **/build/
 .gradle/
 .course-libs/
+**/results/
