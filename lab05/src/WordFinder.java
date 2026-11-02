@@ -10,8 +10,12 @@ public class WordFinder {
      *  Use loops. Don't use Collections.max or similar.
      */
     public static String findMax(String[] strings, Comparator<String> c) {
-        // TODO: Implement this.
-        return null;
+        if (strings.length == 0) { throw new IllegalArgumentException("No strings"); }
+        String maximum = strings[0];
+        for (int i = 1; i < strings.length; i++) {
+            if (c.compare(strings[i], maximum) > 0) { maximum = strings[i]; }
+        }
+        return maximum;
     }
 
     public static void main(String[] args) {
@@ -22,7 +26,8 @@ public class WordFinder {
         //       Use your findMax method!
         //
         //       Start by creating a Comparator that compares based on lower case vowels.
-        Comparator<String> vowelComparator = null;
+        Comparator<String> vowelComparator = WordComparators.getCharListComparator(java.util.List.of('a', 'e', 'i', 'o', 'u'));
+        System.out.println(findMax(words, vowelComparator));
 
         // Optional task: Play around with lists of words from Wikipedia articles.
         // String[] zebraWords = ParseUtils.fetchWords("https://en.wikipedia.org/wiki/zebra");

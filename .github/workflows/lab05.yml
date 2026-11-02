@@ -1,0 +1,40 @@
+name: CS61B Lab 05
+on:
+  push:
+    branches: [edidada/lab05]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+      - run: python scripts/setup_dependencies.py
+      - if: matrix.tool == 'maven'
+        run: mvn -B -pl lab05 test
+      - if: matrix.tool == 'gradle'
+        run: gradle :lab05:test --no-daemon
+      - name: Run both data-driven entrypoints
+        if: matrix.tool == 'maven'
+        working-directory: lab05
+        run: |
+          mvn -B org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=Star
+          mvn -B org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=WordFinder
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lab05-${{ matrix.tool }}-reports
+          path: |
+            lab05/target/surefire-reports/
+            lab05/build/reports/tests/
