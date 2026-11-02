@@ -19,7 +19,7 @@ public class TestComplexOomage {
     /* This should pass if your OomageTestUtility.haveNiceHashCodeSpread
        is correct. This is true even though our given ComplexOomage class
        has a flawed hashCode. */
-    /*@Test
+    @Test
     public void testRandomOomagesHashCodeSpread() {
         List<Oomage> oomages = new ArrayList<>();
         int N = 10000;
@@ -29,18 +29,19 @@ public class TestComplexOomage {
         }
 
         assertThat(OomageTestUtility.haveNiceHashCodeSpread(oomages, 10)).isTrue();
-    }*/
+    }
 
     /* TODO: Create a list of Complex Oomages called deadlyList
      * that shows the flaw in the hashCode function.
      */
-    /*
     @Test
     public void testWithDeadlyParams() {
         List<Oomage> deadlyList = new ArrayList<>();
 
-        // Your code here.
+        for (int i = 0; i < 256; i++) {
+            deadlyList.add(new ComplexOomage(List.of(i, 0, 0, 0, 0)));
+        }
 
         assertThat(OomageTestUtility.haveNiceHashCodeSpread(deadlyList, 10)).isTrue();
-    } */
+    }
 }

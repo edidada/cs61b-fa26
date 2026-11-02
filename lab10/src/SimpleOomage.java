@@ -11,27 +11,16 @@ public class SimpleOomage implements Oomage {
     private static final double WIDTH = 0.01;
     private static final boolean USE_PERFECT_HASH = false;
 
-    /*
-        TODO: Write this method. Use pattern matching (instanceof) to check
-       whether o is a SimpleOomage, as in lecture.
-       */
     @Override
     public boolean equals(Object o) {
-        return false;
+        return o instanceof SimpleOomage other && red == other.red
+                && green == other.green && blue == other.blue;
     }
 
-    /* Uncomment this method after you've written
-       equals and failed the testHashCodeAndEqualsConsistency
-       test.
     @Override
     public int hashCode() {
-        if (!USE_PERFECT_HASH) {
-            return red + green + blue;
-        } else {
-            // TODO: Write a perfect hash function for Simple Oomages.
-            return 0;
-        }
-    }*/
+        return (red / 5 * 52 + green / 5) * 52 + blue / 5;
+    }
 
     public SimpleOomage(int r, int g, int b) {
         if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
@@ -58,8 +47,8 @@ public class SimpleOomage implements Oomage {
         return new SimpleOomage(red, green, blue);
     }
 
-    static void main() {
-        IO.println("Drawing 4 random simple Oomages.");
+    public static void main(String[] args) {
+        System.out.println("Drawing 4 random simple Oomages.");
         randomSimpleOomage().draw(0.25, 0.25, 1);
         randomSimpleOomage().draw(0.75, 0.75, 1);
         randomSimpleOomage().draw(0.25, 0.75, 1);

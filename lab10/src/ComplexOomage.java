@@ -10,12 +10,7 @@ public class ComplexOomage implements Oomage {
 
     @Override
     public int hashCode() {
-        int total = 0;
-        for (int x : params) {
-            total = total * 256;
-            total = total + x;
-        }
-        return total;
+        return params.hashCode();
     }
 
     @Override
@@ -78,8 +73,8 @@ public class ComplexOomage implements Oomage {
         return new ComplexOomage(params);
     }
 
-    static void main() {
-        IO.println("Drawing 4 random complex Oomages.");
+    public static void main(String[] args) {
+        System.out.println("Drawing 4 random complex Oomages.");
         randomComplexOomage().draw(0.25, 0.25, 1.5);
         randomComplexOomage().draw(0.75, 0.75, 1.5);
         randomComplexOomage().draw(0.25, 0.75, 1.5);

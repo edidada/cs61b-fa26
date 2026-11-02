@@ -85,13 +85,13 @@ public class GraphVisualizerInternals {
         });
         app.start(port);
         String url = "http://localhost:" + port + "/";
-        IO.println("Visualizer is being served at " + url + " (stop the program to shut it down)");
+        System.out.println("Visualizer is being served at " + url + " (stop the program to shut it down)");
         try {
             if (Desktop.isDesktopSupported()) {
                 Desktop.getDesktop().browse(new URI(url));
             }
         } catch (Exception e) {
-            IO.println("Could not open a browser automatically; open the URL above yourself.");
+            System.out.println("Could not open a browser automatically; open the URL above yourself.");
         }
     }
 

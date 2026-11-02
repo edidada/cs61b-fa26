@@ -3,7 +3,7 @@ import java.util.List;
 
 public class HashTableVisualizer {
 
-    void main() {
+    public static void main(String[] args) {
         /* scale: StdDraw scale
            N:     number of items
            M:     number of buckets */

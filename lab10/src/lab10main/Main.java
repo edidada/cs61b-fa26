@@ -32,11 +32,11 @@ public class Main {
         return g;
     }
 
-    void main() {
+    public static void main(String[] args) {
         Lab10Graph g = cityGraph();
-        IO.println("Nodes: " + g.nodes());
-        IO.println("Neighbors of Denver: " + g.neighbors("Denver"));
-        IO.println("Chicago to New York is " + g.edgeWeight("Chicago", "New York") + " miles.");
+        System.out.println("Nodes: " + g.nodes());
+        System.out.println("Neighbors of Denver: " + g.neighbors("Denver"));
+        System.out.println("Chicago to New York is " + g.edgeWeight("Chicago", "New York") + " miles.");
         GraphVisualizerInternals.show(g);
     }
 }

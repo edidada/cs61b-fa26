@@ -45,21 +45,37 @@ public class Lab10Dijkstras {
         distTo.put(source, 0);
         fringe.changePriority(source, 0);
 
-        // TODO: Fill in the rest of Dijkstra's algorithm.
+        for (String u : g.nodes()) {
+            for (String v : g.neighbors(u)) {
+                if (g.edgeWeight(u, v) < 0) { throw new IllegalArgumentException("Negative edge weight"); }
+            }
+        }
+        while (fringe.size() > 0) {
+            String u = fringe.removeSmallest();
+            if (distTo.get(u) == Integer.MAX_VALUE) { break; }
+            for (String v : g.neighbors(u)) {
+                if (!fringe.contains(v)) { continue; }
+                int candidate = Math.addExact(distTo.get(u), g.edgeWeight(u, v));
+                if (candidate < distTo.get(v)) {
+                    distTo.put(v, candidate);
+                    edgeTo.put(v, u);
+                    fringe.changePriority(v, candidate);
+                }
+            }
+        }
     }
 
     /** Returns true if there is a path from the source to v. The source
      *  always has a path to itself. */
     public boolean hasPathTo(String v) {
-        // TODO: Replace this with your implementation.
-        return false;
+        return distTo.containsKey(v) && distTo.get(v) != Integer.MAX_VALUE;
     }
 
     /** Returns the total weight of the shortest path from the source to v.
      *  Throws IllegalArgumentException if there is no path to v. */
     public int distTo(String v) {
-        // TODO: Replace this with your implementation.
-        return 0;
+        if (!hasPathTo(v)) { throw new IllegalArgumentException("Unreachable node: " + v); }
+        return distTo.get(v);
     }
 
     /** Returns the shortest path from the source to v as a list of nodes,
@@ -67,7 +83,9 @@ public class Lab10Dijkstras {
      *  itself is the one-element list [source].
      *  Throws IllegalArgumentException if there is no path to v. */
     public List<String> shortestPathTo(String v) {
-        // TODO: Replace this with your implementation.
-        return null;
+        if (!hasPathTo(v)) { throw new IllegalArgumentException("Unreachable node: " + v); }
+        java.util.LinkedList<String> path = new java.util.LinkedList<>();
+        for (String u = v; u != null; u = edgeTo.get(u)) { path.addFirst(u); }
+        return new java.util.ArrayList<>(path);
     }
 }
