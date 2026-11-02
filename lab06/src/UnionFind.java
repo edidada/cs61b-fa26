@@ -1,46 +1,51 @@
+import java.util.Arrays;
+
+/** Weighted quick union with full path compression and negative root sizes. */
 public class UnionFind {
-    // TODO: Instance variables
+    private final int[] links;
 
-    /* Creates a UnionFind data structure holding N items. Initially, all
-       items are in disjoint sets. */
-    public UnionFind(int N) {
-        // TODO: YOUR CODE HERE
+    public UnionFind(int n) {
+        if (n < 0) { throw new IllegalArgumentException("Negative item count"); }
+        links = new int[n];
+        Arrays.fill(links, -1);
     }
 
-    /* Returns the size of the set V belongs to. */
-    public int sizeOf(int v) {
-        // TODO: YOUR CODE HERE
-        return -1;
+    private void validate(int v) {
+        if (v < 0 || v >= links.length) { throw new IllegalArgumentException("Invalid item: " + v); }
     }
 
-    /* Returns the parent of V. If V is the root of a tree, returns the
-       negative size of the tree for which V is the root. */
+    public int sizeOf(int v) { return -links[find(v)]; }
+
     public int parent(int v) {
-        // TODO: YOUR CODE HERE
-        return -1;
+        validate(v);
+        return links[v];
     }
 
-    /* Returns true if nodes/vertices V1 and V2 are connected. */
-    public boolean connected(int v1, int v2) {
-        // TODO: YOUR CODE HERE
-        return false;
-    }
+    public boolean connected(int v1, int v2) { return find(v1) == find(v2); }
 
-    /* Returns the root of the set V belongs to. Path-compression is employed
-       allowing for fast search-time. If invalid items are passed into this
-       function, throw an IllegalArgumentException. */
     public int find(int v) {
-        // TODO: YOUR CODE HERE
-        return -1;
+        validate(v);
+        int root = v;
+        while (links[root] >= 0) { root = links[root]; }
+        while (v != root) {
+            int next = links[v];
+            links[v] = root;
+            v = next;
+        }
+        return root;
     }
 
-    /* Connects two items V1 and V2 together by connecting their respective
-       sets. V1 and V2 can be any element, and a union-by-size heuristic is
-       used. If the sizes of the sets are equal, tie break by connecting V1's
-       root to V2's root. Union-ing an item with itself or items that are
-       already connected should not change the structure. */
     public void union(int v1, int v2) {
-        // TODO: YOUR CODE HERE
+        validate(v1);
+        validate(v2);
+        int a = find(v1), b = find(v2);
+        if (a == b) { return; }
+        if (links[a] < links[b]) {
+            links[a] += links[b];
+            links[b] = a;
+        } else {
+            links[b] += links[a];
+            links[a] = b;
+        }
     }
-
 }
