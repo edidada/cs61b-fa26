@@ -1,0 +1,42 @@
+name: CS61B HW01 HW02 HW03 HW05
+on:
+  push:
+    branches: [edidada/hw05]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+      - run: python scripts/setup_dependencies.py
+      - name: Maven builds (hw01 hw02 hw03 hw05)
+        if: matrix.tool == 'maven'
+        run: |
+          for m in hw01 hw02 hw03 hw05; do
+            mvn -B -pl $m test || exit 1
+          done
+      - name: Gradle builds (hw01 hw02 hw03 hw05)
+        if: matrix.tool == 'gradle'
+        run: |
+          for m in hw01 hw02 hw03 hw05; do
+            gradle :$m:test --no-daemon || exit 1
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hw-reports-${{ matrix.tool }}
+          path: |
+            hw*/target/surefire-reports/
+            hw*/build/reports/tests/
