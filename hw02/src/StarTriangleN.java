@@ -14,8 +14,4 @@ public class StarTriangleN {
             System.out.println();
         }
     }
-
-    void main() {
-        starTriangle(7);
-    }
 }

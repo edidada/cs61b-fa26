@@ -10,11 +10,4 @@ public class DoubleUp {
         }
         return builder.toString();
     }
-
-    void main() {
-        String s = doubleUp("hello");
-        IO.println(s);
-
-        IO.println(doubleUp("cat"));
-    }
 }

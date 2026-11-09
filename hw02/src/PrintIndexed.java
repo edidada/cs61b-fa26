@@ -10,9 +10,4 @@ public class PrintIndexed {
         }
         System.out.println();
     }
-
-    void main() {
-        printIndexed("hello");
-        printIndexed("cat"); // should print c2a1t0
-    }
 }

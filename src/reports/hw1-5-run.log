@@ -1,0 +1,973 @@
+test (maven)	Set up job	﻿2026-11-09T04:51:11.0263795Z Current runner version: '2.338.2'
+test (maven)	Set up job	2026-11-09T04:51:11.0286562Z ##[group]Runner Image Provisioner
+test (maven)	Set up job	2026-11-09T04:51:11.0287369Z Hosted Compute Agent
+test (maven)	Set up job	2026-11-09T04:51:11.0287978Z Version: 20261028.624
+test (maven)	Set up job	2026-11-09T04:51:11.0288511Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+test (maven)	Set up job	2026-11-09T04:51:11.0289194Z Build Date: 2026-10-28T21:51:42Z
+test (maven)	Set up job	2026-11-09T04:51:11.0289795Z Worker ID: {e9b79cdf-ca2f-4b5e-9ffb-49ef9a00eaed}
+test (maven)	Set up job	2026-11-09T04:51:11.0290685Z Region: westus2
+test (maven)	Set up job	2026-11-09T04:51:11.0291186Z Cloud: Azure
+test (maven)	Set up job	2026-11-09T04:51:11.0291655Z ##[endgroup]
+test (maven)	Set up job	2026-11-09T04:51:11.0293095Z ##[group]Operating System
+test (maven)	Set up job	2026-11-09T04:51:11.0293652Z Ubuntu
+test (maven)	Set up job	2026-11-09T04:51:11.0294121Z 24.04.5
+test (maven)	Set up job	2026-11-09T04:51:11.0294682Z LTS
+test (maven)	Set up job	2026-11-09T04:51:11.0295136Z ##[endgroup]
+test (maven)	Set up job	2026-11-09T04:51:11.0295651Z ##[group]Runner Image
+test (maven)	Set up job	2026-11-09T04:51:11.0296185Z Image: ubuntu-24.04
+test (maven)	Set up job	2026-11-09T04:51:11.0296690Z Version: 20261101.360.1
+test (maven)	Set up job	2026-11-09T04:51:11.0297635Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+test (maven)	Set up job	2026-11-09T04:51:11.0299179Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+test (maven)	Set up job	2026-11-09T04:51:11.0300137Z ##[endgroup]
+test (maven)	Set up job	2026-11-09T04:51:11.0301631Z ##[group]GITHUB_TOKEN Permissions
+test (maven)	Set up job	2026-11-09T04:51:11.0303451Z Contents: read
+test (maven)	Set up job	2026-11-09T04:51:11.0303955Z Metadata: read
+test (maven)	Set up job	2026-11-09T04:51:11.0304516Z Packages: read
+test (maven)	Set up job	2026-11-09T04:51:11.0305032Z ##[endgroup]
+test (maven)	Set up job	2026-11-09T04:51:11.0306866Z Secret source: Actions
+test (maven)	Set up job	2026-11-09T04:51:11.0307707Z Cache mode: write
+test (maven)	Set up job	2026-11-09T04:51:11.0308315Z Prepare workflow directory
+test (maven)	Set up job	2026-11-09T04:51:11.0577075Z Prepare all required actions
+test (maven)	Set up job	2026-11-09T04:51:11.0616536Z Getting action download info
+test (maven)	Set up job	2026-11-09T04:51:11.4072341Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test (maven)	Set up job	2026-11-09T04:51:11.5122246Z Download action repository 'actions/setup-java@v5' (SHA:b6effb05e454b25005698d916606bdc6ffcbf961)
+test (maven)	Set up job	2026-11-09T04:51:11.8434483Z Download action repository 'gradle/actions@v4' (SHA:ed408507eac070d1f99cc633dbcf757c94c7933a)
+test (maven)	Set up job	2026-11-09T04:51:12.8484843Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+test (maven)	Set up job	2026-11-09T04:51:13.1135361Z Complete job name: test (maven)
+test (maven)	Run actions/checkout@v4	﻿2026-11-09T04:51:13.1961188Z ##[group]Run actions/checkout@v4
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1962378Z with:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1963136Z   repository: edidada/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1970909Z   token: ***
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1971664Z   ssh-strict: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1972431Z   ssh-user: git
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1973194Z   persist-credentials: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1974039Z   clean: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1974808Z   sparse-checkout-cone-mode: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1975716Z   fetch-depth: 1
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1976465Z   fetch-tags: false
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1977232Z   show-progress: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1978014Z   lfs: false
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1978743Z   submodules: false
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1979535Z   set-safe-directory: true
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1980510Z   allow-unsafe-pr-checkout: false
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.1981651Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4507612Z Syncing repository: edidada/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4510841Z ##[group]Getting Git version info
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4512061Z Working directory is '/home/runner/work/cs61b-fa26/cs61b-fa26'
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4514052Z [command]/usr/bin/git version
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4570978Z git version 2.56.0
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4588077Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4600651Z Temporarily overriding HOME='/home/runner/work/_temp/1a4f7635-cabc-4c16-849a-25af297ab13d' before making global git config changes
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4715195Z Adding repository directory to the temporary git global config as a safe directory
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4718270Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs61b-fa26/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4722449Z Deleting the contents of '/home/runner/work/cs61b-fa26/cs61b-fa26'
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4724900Z ##[group]Initializing the repository
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4726930Z [command]/usr/bin/git init /home/runner/work/cs61b-fa26/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4800937Z hint: Using 'master' as the name for the initial branch. This default branch name
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4803302Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4805755Z hint: to use in all of your new repositories, which will suppress this warning,
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4807570Z hint: call:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4808509Z hint:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4809713Z hint: 	git config --global init.defaultBranch <name>
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4811380Z hint:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4812745Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4815007Z hint: 'development'. The just-created branch can be renamed via this command:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4816824Z hint:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4817814Z hint: 	git branch -m <name>
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4818958Z hint:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4820597Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4823110Z Initialized empty Git repository in /home/runner/work/cs61b-fa26/cs61b-fa26/.git/
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4827038Z [command]/usr/bin/git remote add origin https://github.com/edidada/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4925040Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4926988Z ##[group]Disabling automatic garbage collection
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4928762Z [command]/usr/bin/git config --local gc.auto 0
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4959890Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4961980Z ##[group]Setting up auth
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4964648Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.4998590Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5431449Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5470902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5674613Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5713720Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5919380Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5963229Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5964582Z ##[group]Fetching the repository
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:13.5974829Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8bfa6353a39a18140df0b45c22fbd14ba9d09916:refs/remotes/origin/edidada/hw05
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0192536Z From https://github.com/edidada/cs61b-fa26
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0193140Z  * [new ref]         8bfa6353a39a18140df0b45c22fbd14ba9d09916 -> origin/edidada/hw05
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0196413Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0197173Z ##[group]Determining the checkout info
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0199395Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0206346Z [command]/usr/bin/git sparse-checkout disable
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0263439Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0296928Z ##[group]Checking out the ref
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0302265Z [command]/usr/bin/git checkout --progress --force -B edidada/hw05 refs/remotes/origin/edidada/hw05
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0640185Z Switched to a new branch 'edidada/hw05'
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0644456Z branch 'edidada/hw05' set up to track 'origin/edidada/hw05'.
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0651031Z ##[endgroup]
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0697161Z [command]/usr/bin/git log -1 --format=%H
+test (maven)	Run actions/checkout@v4	2026-11-09T04:51:14.0729399Z 8bfa6353a39a18140df0b45c22fbd14ba9d09916
+test (maven)	Run actions/setup-java@v5	﻿2026-11-09T04:51:14.1021223Z ##[group]Run actions/setup-java@v5
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1021723Z with:
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1021937Z   distribution: temurin
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1022167Z   java-version: 17
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1022379Z   java-package: jdk
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1022593Z   check-latest: false
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1022815Z   set-default: true
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1023030Z   verify-signature: false
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1023268Z   server-id: github
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1023500Z   server-username: GITHUB_ACTOR
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1023755Z   server-password: GITHUB_TOKEN
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1024002Z   overwrite-settings: true
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1024235Z   job-status: success
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1026352Z   token: ***
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1026588Z   show-download-progress: false
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.1026848Z ##[endgroup]
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2289477Z ##[group]Installed distributions
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2343027Z Resolved Java 17.0.21+9 from tool-cache
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2343518Z Setting Java 17.0.21+9 as the default
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2351909Z Creating toolchains.xml for JDK version 17 from temurin
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2407576Z Writing to /home/runner/.m2/toolchains.xml
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2408090Z 
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2408342Z Java configuration:
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2408728Z   Distribution: temurin
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2409098Z   Version: 17.0.21+9
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2409611Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2410182Z 
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2410625Z ##[endgroup]
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2442715Z Creating settings.xml with server-id: github
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2443284Z Writing to /home/runner/.m2/settings.xml
+test (maven)	Run actions/setup-java@v5	2026-11-09T04:51:14.2444245Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+test (maven)	Run gradle/actions/setup-gradle@v4	﻿2026-11-09T04:51:14.2709169Z ##[group]Run gradle/actions/setup-gradle@v4
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2709508Z with:
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2709716Z   gradle-version: 8.14.3
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2709946Z   cache-disabled: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2710430Z   cache-read-only: true
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2710673Z   cache-write-only: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2710916Z   cache-overwrite-existing: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2711176Z   cache-cleanup: on-success
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2711450Z   gradle-home-cache-includes: caches
+test (maven)	Run gradle/actions/setup-gradle@v4	notifications
+test (maven)	Run gradle/actions/setup-gradle@v4	
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2711751Z   add-job-summary: always
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2711997Z   add-job-summary-as-pr-comment: never
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2712267Z   dependency-graph: disabled
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2712551Z   dependency-graph-report-dir: dependency-graph-reports
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2712883Z   dependency-graph-continue-on-failure: true
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2713164Z   build-scan-publish: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2713397Z   validate-wrappers: true
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2713645Z   allow-snapshot-wrappers: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2713948Z   gradle-home-cache-strict-match: false
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2714227Z   workflow-job-context: {
+test (maven)	Run gradle/actions/setup-gradle@v4	  "tool": "maven"
+test (maven)	Run gradle/actions/setup-gradle@v4	}
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2716465Z   github-token: ***
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2716684Z env:
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2716976Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2717413Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2717780Z   MAVEN_ARGS: -ntp
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.2717991Z ##[endgroup]
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.6584900Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.6587043Z ##[group]Restore Gradle state from cache
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9012414Z Gradle User Home cache not found. Will initialize empty.
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9013302Z ##[endgroup]
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9097404Z ##[group]All Gradle Wrapper jars are valid
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9098020Z 
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9098301Z ##[endgroup]
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:14.9699415Z ##[group]Provision Gradle 8.14.3
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:16.5198144Z Gradle distribution 8.14.3 not found in cache. Will download.
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:17.4099424Z Downloaded https://services.gradle.org/distributions/gradle-8.14.3-bin.zip to /home/runner/work/_temp/.gradle-actions/gradle-installations/downloads/gradle-8.14.3-bin.zip (size 137393837)
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:17.4120318Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/.gradle-actions/gradle-installations/downloads/gradle-8.14.3-bin.zip
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:18.2555110Z Extracted Gradle 8.14.3 to /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.14.3
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:18.2568011Z Provisioned Gradle executable /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.14.3/bin/gradle
+test (maven)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:18.2569091Z ##[endgroup]
+test (maven)	Run python scripts/setup_dependencies.py	﻿2026-11-09T04:51:18.2731823Z ##[group]Run python scripts/setup_dependencies.py
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2732213Z [36;1mpython scripts/setup_dependencies.py[0m
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2752335Z shell: /usr/bin/bash -e {0}
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2752596Z env:
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2752856Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2753261Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2753581Z   MAVEN_ARGS: -ntp
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2753784Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2754026Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2754257Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2754501Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2754844Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2755212Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2755470Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:18.2755703Z ##[endgroup]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:20.9515151Z [INFO] Scanning for projects...
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0279674Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0280909Z [INFO] Reactor Build Order:
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0281389Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0282755Z [INFO] cs61b-fa26                                                         [pom]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0283639Z [INFO] lab02                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0284326Z [INFO] lab03                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0284965Z [INFO] lab05                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0285660Z [INFO] lab06                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0286374Z [INFO] lab07                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0287094Z [INFO] lab09                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0287729Z [INFO] lab10                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0288366Z [INFO] proj1                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0290338Z [INFO] hw01                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0294029Z [INFO] hw02                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0294770Z [INFO] hw03                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.0295455Z [INFO] hw05                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:22.3674411Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.0858679Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3816608Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3817447Z [INFO] -----------------< io.github.edidada.csdiy:cs61b-fa26 >-----------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3822101Z [INFO] Building cs61b-fa26 1.0-SNAPSHOT                                  [1/13]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3822835Z [INFO]   from pom.xml
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3823506Z [INFO] --------------------------------[ pom ]---------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3852631Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.3853699Z [INFO] --- install:3.1.3:install-file (default-cli) @ cs61b-fa26 ---
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7595387Z [INFO] pom.xml not found in algs4.jar
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7671272Z [INFO] Installing /home/runner/work/cs61b-fa26/cs61b-fa26/.course-libs/algs4.jar to /home/runner/.m2/repository/edu/princeton/cs/algs4/fa26-pinned/algs4-fa26-pinned.jar
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7687590Z [INFO] Installing /tmp/mvninstall3062630065086782201.pom to /home/runner/.m2/repository/edu/princeton/cs/algs4/fa26-pinned/algs4-fa26-pinned.pom
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7730844Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7731943Z [INFO] Reactor Summary for cs61b-fa26 1.0-SNAPSHOT:
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7732504Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7732922Z [INFO] lab02 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7733638Z [INFO] lab03 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7734240Z [INFO] lab05 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7734852Z [INFO] lab06 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7735464Z [INFO] lab07 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7736064Z [INFO] lab09 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7736657Z [INFO] lab10 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7737274Z [INFO] proj1 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7737884Z [INFO] hw01 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7742998Z [INFO] hw02 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7761687Z [INFO] hw03 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7762532Z [INFO] hw05 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7763209Z [INFO] cs61b-fa26 ......................................... SUCCESS [  0.391 s]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7763981Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7764595Z [INFO] BUILD SUCCESS
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7765133Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7771756Z [INFO] Total time:  2.878 s
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7775010Z [INFO] Finished at: 2026-11-09T04:51:23Z
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.7775488Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9082775Z [INFO] Scanning for projects...
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9911233Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9912213Z [INFO] Reactor Build Order:
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9912663Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9914090Z [INFO] cs61b-fa26                                                         [pom]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9915435Z [INFO] lab02                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9916086Z [INFO] lab03                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9916710Z [INFO] lab05                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9917320Z [INFO] lab06                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9917935Z [INFO] lab07                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9918544Z [INFO] lab09                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9919174Z [INFO] lab10                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9919789Z [INFO] proj1                                                              [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9920532Z [INFO] hw01                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9921136Z [INFO] hw02                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9922918Z [INFO] hw03                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.9926918Z [INFO] hw05                                                               [jar]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.1033238Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.1311310Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9862220Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9881224Z [INFO] -----------------< io.github.edidada.csdiy:cs61b-fa26 >-----------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9922300Z [INFO] Building cs61b-fa26 1.0-SNAPSHOT                                  [1/13]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9943974Z [INFO]   from pom.xml
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9960981Z [INFO] --------------------------------[ pom ]---------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9961688Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.9962274Z [INFO] --- install:3.1.3:install-file (default-cli) @ cs61b-fa26 ---
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1125306Z [INFO] Installing /home/runner/work/cs61b-fa26/cs61b-fa26/.course-libs/jh61b.jar to /home/runner/.m2/repository/edu/berkeley/cs61b/jh61b/fa26-pinned/jh61b-fa26-pinned.jar
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1191333Z [INFO] Installing /tmp/mvninstall11491625191644720285.pom to /home/runner/.m2/repository/edu/berkeley/cs61b/jh61b/fa26-pinned/jh61b-fa26-pinned.pom
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1238837Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1239761Z [INFO] Reactor Summary for cs61b-fa26 1.0-SNAPSHOT:
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1240704Z [INFO] 
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1242877Z [INFO] lab02 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1243592Z [INFO] lab03 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1244223Z [INFO] lab05 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1244833Z [INFO] lab06 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1246090Z [INFO] lab07 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1246745Z [INFO] lab09 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1247384Z [INFO] lab10 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1248016Z [INFO] proj1 .............................................. SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1248634Z [INFO] hw01 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1249252Z [INFO] hw02 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1249863Z [INFO] hw03 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1250639Z [INFO] hw05 ............................................... SKIPPED
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1251321Z [INFO] cs61b-fa26 ......................................... SUCCESS [  0.138 s]
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1252023Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1252615Z [INFO] BUILD SUCCESS
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1253126Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1256156Z [INFO] Total time:  1.254 s
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1256686Z [INFO] Finished at: 2026-11-09T04:51:26Z
+test (maven)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1257294Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	﻿2026-11-09T04:51:26.1700701Z ##[group]Run for m in hw01 hw02 hw03 hw05; do
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1701023Z [36;1mfor m in hw01 hw02 hw03 hw05; do[0m
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1701274Z [36;1m  mvn -B -pl $m test || exit 1[0m
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1701488Z [36;1mdone[0m
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1718789Z shell: /usr/bin/bash -e {0}
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1718991Z env:
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1719239Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1719627Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1719924Z   MAVEN_ARGS: -ntp
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1720391Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1720642Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1720875Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1721267Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1721612Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1721975Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1722249Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:26.1722462Z ##[endgroup]
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.2266290Z [INFO] Scanning for projects...
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.3039590Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.3040332Z [INFO] --------------------< io.github.edidada.csdiy:hw01 >--------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.3040833Z [INFO] Building hw01 1.0-SNAPSHOT
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.3041145Z [INFO]   from pom.xml
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.3041497Z [INFO] --------------------------------[ jar ]---------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:27.4041118Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:28.2531317Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.6372347Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.6377432Z [INFO] --- resources:3.5.0:resources (default-resources) @ hw01 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.0685657Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw01/src/main/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.0713448Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.0726071Z [INFO] --- compiler:3.13.0:compile (default-compile) @ hw01 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.5380743Z [INFO] Recompiling the module because of changed source code.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.5489598Z [INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4458225Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4472985Z [INFO] --- resources:3.5.0:testResources (default-testResources) @ hw01 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4500985Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw01/src/test/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4530621Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4546464Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ hw01 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4547128Z [INFO] Recompiling the module because of changed dependency.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.4547740Z [INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.6866629Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.6890952Z [INFO] --- surefire:3.5.2:test (default-test) @ hw01 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.0931541Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.4091765Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.4092135Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.4092415Z [INFO]  T E S T S
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.4092640Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.7884594Z [INFO] Running ArithmeticTest
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8439625Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in ArithmeticTest
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8736766Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8737103Z [INFO] Results:
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8737351Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8737673Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8738044Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8761472Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8762251Z [INFO] BUILD SUCCESS
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8762520Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8764005Z [INFO] Total time:  5.681 s
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8765112Z [INFO] Finished at: 2026-11-09T04:51:32Z
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:32.8765690Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.8829017Z [INFO] Scanning for projects...
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.9611159Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.9611762Z [INFO] --------------------< io.github.edidada.csdiy:hw02 >--------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.9612289Z [INFO] Building hw02 1.0-SNAPSHOT
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.9612642Z [INFO]   from pom.xml
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:33.9613268Z [INFO] --------------------------------[ jar ]---------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:34.0771111Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:34.1424222Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.0871021Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.0881098Z [INFO] --- resources:3.5.0:resources (default-resources) @ hw02 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.1922034Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw02/src/main/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.1940643Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.1941053Z [INFO] --- compiler:3.13.0:compile (default-compile) @ hw02 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.3131904Z [INFO] Recompiling the module because of changed source code.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.3176722Z [INFO] Compiling 4 source files with javac [debug release 17] to target/classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6651185Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6660872Z [INFO] --- resources:3.5.0:testResources (default-testResources) @ hw02 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6711071Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw02/src/test/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6730552Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6740616Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ hw02 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6776587Z [INFO] No sources to compile
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6777227Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.6777731Z [INFO] --- surefire:3.5.2:test (default-test) @ hw02 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7831800Z [INFO] No tests to run.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7886555Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7904618Z [INFO] BUILD SUCCESS
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7911108Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7911742Z [INFO] Total time:  1.942 s
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7912241Z [INFO] Finished at: 2026-11-09T04:51:35Z
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:35.7912834Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8029363Z [INFO] Scanning for projects...
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8820993Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8822780Z [INFO] --------------------< io.github.edidada.csdiy:hw03 >--------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8823484Z [INFO] Building hw03 1.0-SNAPSHOT
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8824056Z [INFO]   from pom.xml
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.8830502Z [INFO] --------------------------------[ jar ]---------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:36.9976261Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:37.0606944Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.0131369Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.0170975Z [INFO] --- resources:3.5.0:resources (default-resources) @ hw03 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.1157512Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw03/src/main/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.1171052Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.1171584Z [INFO] --- compiler:3.13.0:compile (default-compile) @ hw03 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.2525054Z [INFO] Recompiling the module because of changed source code.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.2571504Z [INFO] Compiling 2 source files with javac [debug release 17] to target/classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6511091Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6511859Z [INFO] --- resources:3.5.0:testResources (default-testResources) @ hw03 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6549576Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw03/src/test/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6580618Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6581259Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ hw03 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6619735Z [INFO] Recompiling the module because of changed dependency.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.6620823Z [INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.8617471Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.8629861Z [INFO] --- surefire:3.5.2:test (default-test) @ hw03 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:38.9784067Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.0211038Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.0211567Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.0212003Z [INFO]  T E S T S
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.0212335Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.3676535Z [INFO] Running IntListRequiredTests
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4341812Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in IntListRequiredTests
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4522169Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4522594Z [INFO] Results:
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4522861Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4523208Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4523612Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4539206Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4543450Z [INFO] BUILD SUCCESS
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4550870Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4551592Z [INFO] Total time:  2.686 s
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4552234Z [INFO] Finished at: 2026-11-09T04:51:39Z
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:39.4552940Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.4798151Z [INFO] Scanning for projects...
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.5611347Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.5631262Z [INFO] --------------------< io.github.edidada.csdiy:hw05 >--------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.5631972Z [INFO] Building hw05 1.0-SNAPSHOT
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.5632542Z [INFO]   from pom.xml
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.5633151Z [INFO] --------------------------------[ jar ]---------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.6661332Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:40.7217359Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.6075995Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.6091183Z [INFO] --- resources:3.5.0:resources (default-resources) @ hw05 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.7122403Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw05/src/main/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.7128332Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.7129031Z [INFO] --- compiler:3.13.0:compile (default-compile) @ hw05 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.8481273Z [INFO] Recompiling the module because of changed source code.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:41.8519236Z [INFO] Compiling 3 source files with javac [debug release 17] to target/classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2838966Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2841456Z [INFO] --- resources:3.5.0:testResources (default-testResources) @ hw05 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2854043Z [INFO] skip non existing resourceDirectory /home/runner/work/cs61b-fa26/cs61b-fa26/hw05/src/test/resources
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2854878Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2855283Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ hw05 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2920928Z [INFO] Recompiling the module because of changed dependency.
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.2948930Z [INFO] Compiling 4 source files with javac [debug release 17] to target/test-classes
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.6801132Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.6840753Z [INFO] --- surefire:3.5.2:test (default-test) @ hw05 ---
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.7910489Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.8401134Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.8427631Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.8438813Z [INFO]  T E S T S
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:42.8460659Z [INFO] -------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1554555Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1554909Z [INFO] Results:
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1555157Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1568295Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1568817Z [INFO] 
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1592027Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1592633Z [INFO] BUILD SUCCESS
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1593088Z [INFO] ------------------------------------------------------------------------
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1595280Z [INFO] Total time:  2.712 s
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1596951Z [INFO] Finished at: 2026-11-09T04:51:43Z
+test (maven)	Maven builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:43.1597586Z [INFO] ------------------------------------------------------------------------
+test (maven)	Run actions/upload-artifact@v4	﻿2026-11-09T04:51:43.1923373Z ##[group]Run actions/upload-artifact@v4
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1923613Z with:
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1923784Z   name: hw-reports-maven
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1924033Z   path: hw*/target/surefire-reports/
+test (maven)	Run actions/upload-artifact@v4	hw*/build/reports/tests/
+test (maven)	Run actions/upload-artifact@v4	
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1924307Z   if-no-files-found: warn
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1924502Z   compression-level: 6
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1924679Z   overwrite: false
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1924866Z   include-hidden-files: false
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1925059Z env:
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1925316Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1925698Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1926003Z   MAVEN_ARGS: -ntp
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1926213Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1926463Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1926696Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1926934Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1927305Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1927672Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1927923Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.1928140Z ##[endgroup]
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.3300280Z (node:2845) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.3301233Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.3391316Z With the provided path, there will be 4 files uploaded
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.3410640Z Artifact name is valid!
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.3411012Z Root directory input is valid!
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.6879548Z Beginning upload of artifact content to blob storage
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:43.7093449Z (node:2845) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.0073105Z Uploaded bytes 4298
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.0863621Z Finished uploading artifact content to blob storage!
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.0864152Z SHA256 digest of uploaded artifact zip is a737c706149c94167c03addd674d8bfbe1e104772b200223e48748d00abc2035
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.0865651Z Finalizing artifact upload
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.5855147Z Artifact hw-reports-maven.zip successfully finalized. Artifact ID 13650522014
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.5855918Z Artifact hw-reports-maven has been successfully uploaded! Final size is 4298 bytes. Artifact ID is 13650522014
+test (maven)	Run actions/upload-artifact@v4	2026-11-09T04:51:44.5860834Z Artifact download URL: https://github.com/edidada/cs61b-fa26/actions/runs/42564032343/artifacts/13650522014
+test (maven)	Post Run gradle/actions/setup-gradle@v4	﻿2026-11-09T04:51:44.6085069Z Post job cleanup.
+test (maven)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:44.8011309Z In post-action step
+test (maven)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:44.8017559Z Cache is read-only: will not save state for use in subsequent builds.
+test (maven)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:44.8021957Z Generating Job Summary
+test (maven)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:44.8035898Z Completed post-action step
+test (maven)	Post Run actions/setup-java@v5	﻿2026-11-09T04:51:44.8267965Z Post job cleanup.
+test (maven)	Post Run actions/checkout@v4	﻿2026-11-09T04:51:44.9472256Z Post job cleanup.
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0175780Z [command]/usr/bin/git version
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0213116Z git version 2.56.0
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0246298Z Temporarily overriding HOME='/home/runner/work/_temp/282c6fcd-70bf-427d-b805-fcd72f3810f1' before making global git config changes
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0247037Z Adding repository directory to the temporary git global config as a safe directory
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0252175Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs61b-fa26/cs61b-fa26
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0287653Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0319235Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0555158Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0582151Z http.https://github.com/.extraheader
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0591578Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0625196Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0847780Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (maven)	Post Run actions/checkout@v4	2026-11-09T04:51:45.0884482Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (maven)	Complete job	﻿2026-11-09T04:51:45.1278347Z Cleaning up orphan processes
+test (maven)	Complete job	2026-11-09T04:51:45.1593654Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (gradle)	Set up job	﻿2026-11-09T04:51:11.4670111Z Current runner version: '2.338.2'
+test (gradle)	Set up job	2026-11-09T04:51:11.4694855Z ##[group]Runner Image Provisioner
+test (gradle)	Set up job	2026-11-09T04:51:11.4696120Z Hosted Compute Agent
+test (gradle)	Set up job	2026-11-09T04:51:11.4696738Z Version: 20261028.624
+test (gradle)	Set up job	2026-11-09T04:51:11.4697358Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+test (gradle)	Set up job	2026-11-09T04:51:11.4698095Z Build Date: 2026-10-28T21:51:42Z
+test (gradle)	Set up job	2026-11-09T04:51:11.4698790Z Worker ID: {05e55ade-8213-4ded-9394-0530aca115ad}
+test (gradle)	Set up job	2026-11-09T04:51:11.4699522Z Region: westus2
+test (gradle)	Set up job	2026-11-09T04:51:11.4700072Z Cloud: Azure
+test (gradle)	Set up job	2026-11-09T04:51:11.4700603Z ##[endgroup]
+test (gradle)	Set up job	2026-11-09T04:51:11.4702229Z ##[group]Operating System
+test (gradle)	Set up job	2026-11-09T04:51:11.4702878Z Ubuntu
+test (gradle)	Set up job	2026-11-09T04:51:11.4703376Z 24.04.5
+test (gradle)	Set up job	2026-11-09T04:51:11.4703925Z LTS
+test (gradle)	Set up job	2026-11-09T04:51:11.4704433Z ##[endgroup]
+test (gradle)	Set up job	2026-11-09T04:51:11.4705023Z ##[group]Runner Image
+test (gradle)	Set up job	2026-11-09T04:51:11.4706147Z Image: ubuntu-24.04
+test (gradle)	Set up job	2026-11-09T04:51:11.4706705Z Version: 20261101.360.1
+test (gradle)	Set up job	2026-11-09T04:51:11.4707770Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+test (gradle)	Set up job	2026-11-09T04:51:11.4709423Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+test (gradle)	Set up job	2026-11-09T04:51:11.4710430Z ##[endgroup]
+test (gradle)	Set up job	2026-11-09T04:51:11.4711891Z ##[group]GITHUB_TOKEN Permissions
+test (gradle)	Set up job	2026-11-09T04:51:11.4714238Z Contents: read
+test (gradle)	Set up job	2026-11-09T04:51:11.4714805Z Metadata: read
+test (gradle)	Set up job	2026-11-09T04:51:11.4715866Z Packages: read
+test (gradle)	Set up job	2026-11-09T04:51:11.4716448Z ##[endgroup]
+test (gradle)	Set up job	2026-11-09T04:51:11.4718591Z Secret source: Actions
+test (gradle)	Set up job	2026-11-09T04:51:11.4719581Z Cache mode: write
+test (gradle)	Set up job	2026-11-09T04:51:11.4720313Z Prepare workflow directory
+test (gradle)	Set up job	2026-11-09T04:51:11.5034633Z Prepare all required actions
+test (gradle)	Set up job	2026-11-09T04:51:11.5091348Z Getting action download info
+test (gradle)	Set up job	2026-11-09T04:51:11.9091488Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test (gradle)	Set up job	2026-11-09T04:51:12.0295849Z Download action repository 'actions/setup-java@v5' (SHA:b6effb05e454b25005698d916606bdc6ffcbf961)
+test (gradle)	Set up job	2026-11-09T04:51:12.4020128Z Download action repository 'gradle/actions@v4' (SHA:ed408507eac070d1f99cc633dbcf757c94c7933a)
+test (gradle)	Set up job	2026-11-09T04:51:13.6426311Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+test (gradle)	Set up job	2026-11-09T04:51:13.8978526Z Complete job name: test (gradle)
+test (gradle)	Run actions/checkout@v4	﻿2026-11-09T04:51:13.9734190Z ##[group]Run actions/checkout@v4
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9734888Z with:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9735252Z   repository: edidada/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9738405Z   token: ***
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9738790Z   ssh-strict: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9739181Z   ssh-user: git
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9739556Z   persist-credentials: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9739930Z   clean: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9740360Z   sparse-checkout-cone-mode: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9740766Z   fetch-depth: 1
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9741125Z   fetch-tags: false
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9741499Z   show-progress: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9741888Z   lfs: false
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9742333Z   submodules: false
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9742697Z   set-safe-directory: true
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9743130Z   allow-unsafe-pr-checkout: false
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:13.9743750Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2457364Z Syncing repository: edidada/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2459394Z ##[group]Getting Git version info
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2460255Z Working directory is '/home/runner/work/cs61b-fa26/cs61b-fa26'
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2461582Z [command]/usr/bin/git version
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2534103Z git version 2.56.0
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2553002Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2567815Z Temporarily overriding HOME='/home/runner/work/_temp/f4d0632d-5521-4e20-a341-9159bbfeff4e' before making global git config changes
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2569737Z Adding repository directory to the temporary git global config as a safe directory
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2572721Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs61b-fa26/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2623973Z Deleting the contents of '/home/runner/work/cs61b-fa26/cs61b-fa26'
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2629639Z ##[group]Initializing the repository
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2632965Z [command]/usr/bin/git init /home/runner/work/cs61b-fa26/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2758446Z hint: Using 'master' as the name for the initial branch. This default branch name
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2759851Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2761523Z hint: to use in all of your new repositories, which will suppress this warning,
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2762546Z hint: call:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2763254Z hint:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2764159Z hint: 	git config --global init.defaultBranch <name>
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2765408Z hint:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2766386Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2767648Z hint: 'development'. The just-created branch can be renamed via this command:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2768613Z hint:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2769250Z hint: 	git branch -m <name>
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2769916Z hint:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2770688Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2772011Z Initialized empty Git repository in /home/runner/work/cs61b-fa26/cs61b-fa26/.git/
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2783455Z [command]/usr/bin/git remote add origin https://github.com/edidada/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2831744Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2833347Z ##[group]Disabling automatic garbage collection
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2834619Z [command]/usr/bin/git config --local gc.auto 0
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2867490Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2868847Z ##[group]Setting up auth
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2873151Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.2905855Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3288628Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3324073Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3543483Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3579656Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3768663Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3814448Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3815864Z ##[group]Fetching the repository
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.3827251Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8bfa6353a39a18140df0b45c22fbd14ba9d09916:refs/remotes/origin/edidada/hw05
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7667995Z From https://github.com/edidada/cs61b-fa26
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7669129Z  * [new ref]         8bfa6353a39a18140df0b45c22fbd14ba9d09916 -> origin/edidada/hw05
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7676095Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7677296Z ##[group]Determining the checkout info
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7678515Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7685399Z [command]/usr/bin/git sparse-checkout disable
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7745591Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7781481Z ##[group]Checking out the ref
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.7787043Z [command]/usr/bin/git checkout --progress --force -B edidada/hw05 refs/remotes/origin/edidada/hw05
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.8253361Z Switched to a new branch 'edidada/hw05'
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.8258473Z branch 'edidada/hw05' set up to track 'origin/edidada/hw05'.
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.8264200Z ##[endgroup]
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.8307062Z [command]/usr/bin/git log -1 --format=%H
+test (gradle)	Run actions/checkout@v4	2026-11-09T04:51:14.8332744Z 8bfa6353a39a18140df0b45c22fbd14ba9d09916
+test (gradle)	Run actions/setup-java@v5	﻿2026-11-09T04:51:14.8631825Z ##[group]Run actions/setup-java@v5
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8632317Z with:
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8632539Z   distribution: temurin
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8632780Z   java-version: 17
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8633005Z   java-package: jdk
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8633226Z   check-latest: false
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8633449Z   set-default: true
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8633672Z   verify-signature: false
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8633911Z   server-id: github
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8634136Z   server-username: GITHUB_ACTOR
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8634404Z   server-password: GITHUB_TOKEN
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8634663Z   overwrite-settings: true
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8634906Z   job-status: success
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8637389Z   token: ***
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8637653Z   show-download-progress: false
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:14.8637930Z ##[endgroup]
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0321908Z ##[group]Installed distributions
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0398538Z Resolved Java 17.0.21+9 from tool-cache
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0399165Z Setting Java 17.0.21+9 as the default
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0408849Z Creating toolchains.xml for JDK version 17 from temurin
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0476300Z Writing to /home/runner/.m2/toolchains.xml
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0476761Z 
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0476908Z Java configuration:
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0477280Z   Distribution: temurin
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0477619Z   Version: 17.0.21+9
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0479642Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0480145Z 
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0480682Z ##[endgroup]
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0536380Z Creating settings.xml with server-id: github
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0537223Z Writing to /home/runner/.m2/settings.xml
+test (gradle)	Run actions/setup-java@v5	2026-11-09T04:51:15.0538474Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+test (gradle)	Run gradle/actions/setup-gradle@v4	﻿2026-11-09T04:51:15.0851462Z ##[group]Run gradle/actions/setup-gradle@v4
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0851986Z with:
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0852265Z   gradle-version: 8.14.3
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0852689Z   cache-disabled: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0853102Z   cache-read-only: true
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0853459Z   cache-write-only: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0853838Z   cache-overwrite-existing: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0854232Z   cache-cleanup: on-success
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0854661Z   gradle-home-cache-includes: caches
+test (gradle)	Run gradle/actions/setup-gradle@v4	notifications
+test (gradle)	Run gradle/actions/setup-gradle@v4	
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0855157Z   add-job-summary: always
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0855713Z   add-job-summary-as-pr-comment: never
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0856165Z   dependency-graph: disabled
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0856642Z   dependency-graph-report-dir: dependency-graph-reports
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0857177Z   dependency-graph-continue-on-failure: true
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0857653Z   build-scan-publish: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0858024Z   validate-wrappers: true
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0858401Z   allow-snapshot-wrappers: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0858885Z   gradle-home-cache-strict-match: false
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0859337Z   workflow-job-context: {
+test (gradle)	Run gradle/actions/setup-gradle@v4	  "tool": "gradle"
+test (gradle)	Run gradle/actions/setup-gradle@v4	}
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0862975Z   github-token: ***
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0863477Z env:
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0863924Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0864526Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0865136Z   MAVEN_ARGS: -ntp
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.0865626Z ##[endgroup]
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.5568816Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.5576673Z ##[group]Restore Gradle state from cache
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8058864Z Gradle User Home cache not found. Will initialize empty.
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8059702Z ##[endgroup]
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8174144Z ##[group]All Gradle Wrapper jars are valid
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8174767Z 
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8175040Z ##[endgroup]
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:15.8986641Z ##[group]Provision Gradle 8.14.3
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:19.2258740Z Gradle distribution 8.14.3 not found in cache. Will download.
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:20.1663291Z Downloaded https://services.gradle.org/distributions/gradle-8.14.3-bin.zip to /home/runner/work/_temp/.gradle-actions/gradle-installations/downloads/gradle-8.14.3-bin.zip (size 137393837)
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:20.1728330Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/.gradle-actions/gradle-installations/downloads/gradle-8.14.3-bin.zip
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:21.2798044Z Extracted Gradle 8.14.3 to /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.14.3
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:21.2799466Z Provisioned Gradle executable /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.14.3/bin/gradle
+test (gradle)	Run gradle/actions/setup-gradle@v4	2026-11-09T04:51:21.2800700Z ##[endgroup]
+test (gradle)	Run python scripts/setup_dependencies.py	﻿2026-11-09T04:51:21.2977358Z ##[group]Run python scripts/setup_dependencies.py
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2977873Z [36;1mpython scripts/setup_dependencies.py[0m
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2994715Z shell: /usr/bin/bash -e {0}
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2995055Z env:
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2995691Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2996281Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2996683Z   MAVEN_ARGS: -ntp
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2996944Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2997260Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2997564Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2997884Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2998333Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2998842Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2999162Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:21.2999482Z ##[endgroup]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:23.9846817Z [INFO] Scanning for projects...
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0707761Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0727060Z [INFO] Reactor Build Order:
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0727921Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0728700Z [INFO] cs61b-fa26                                                         [pom]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0729534Z [INFO] lab02                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0730231Z [INFO] lab03                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0730982Z [INFO] lab05                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0731806Z [INFO] lab06                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0732657Z [INFO] lab07                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0733369Z [INFO] lab09                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0734187Z [INFO] lab10                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0734902Z [INFO] proj1                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0735875Z [INFO] hw01                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0736606Z [INFO] hw02                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0737321Z [INFO] hw03                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:24.0738083Z [INFO] hw05                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.0167890Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:25.8108497Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1204242Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1205218Z [INFO] -----------------< io.github.edidada.csdiy:cs61b-fa26 >-----------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1206906Z [INFO] Building cs61b-fa26 1.0-SNAPSHOT                                  [1/13]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1210265Z [INFO]   from pom.xml
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1211491Z [INFO] --------------------------------[ pom ]---------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1253380Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.1257711Z [INFO] --- install:3.1.3:install-file (default-cli) @ cs61b-fa26 ---
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5007213Z [INFO] pom.xml not found in algs4.jar
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5108410Z [INFO] Installing /home/runner/work/cs61b-fa26/cs61b-fa26/.course-libs/algs4.jar to /home/runner/.m2/repository/edu/princeton/cs/algs4/fa26-pinned/algs4-fa26-pinned.jar
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5132914Z [INFO] Installing /tmp/mvninstall6500102493674117107.pom to /home/runner/.m2/repository/edu/princeton/cs/algs4/fa26-pinned/algs4-fa26-pinned.pom
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5188709Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5205268Z [INFO] Reactor Summary for cs61b-fa26 1.0-SNAPSHOT:
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5206059Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5231625Z [INFO] lab02 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5232629Z [INFO] lab03 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5236006Z [INFO] lab05 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5236836Z [INFO] lab06 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5237547Z [INFO] lab07 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5238259Z [INFO] lab09 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5238971Z [INFO] lab10 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5240122Z [INFO] proj1 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5240843Z [INFO] hw01 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5241516Z [INFO] hw02 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5242082Z [INFO] hw03 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5242668Z [INFO] hw05 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5243304Z [INFO] cs61b-fa26 ......................................... SUCCESS [  0.398 s]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5243972Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5244525Z [INFO] BUILD SUCCESS
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5244944Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5245588Z [INFO] Total time:  2.594 s
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5245952Z [INFO] Finished at: 2026-11-09T04:51:26Z
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:26.5246459Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.7785932Z [INFO] Scanning for projects...
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8728626Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8739328Z [INFO] Reactor Build Order:
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8739908Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8740368Z [INFO] cs61b-fa26                                                         [pom]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8741017Z [INFO] lab02                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8741615Z [INFO] lab03                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8742222Z [INFO] lab05                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8742806Z [INFO] lab06                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8743381Z [INFO] lab07                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8743944Z [INFO] lab09                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8744545Z [INFO] lab10                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8745137Z [INFO] proj1                                                              [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8746085Z [INFO] hw01                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8746658Z [INFO] hw02                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8747208Z [INFO] hw03                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:27.8748222Z [INFO] hw05                                                               [jar]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.0038663Z [INFO] Loaded 24415 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.0387912Z [INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9883978Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9885728Z [INFO] -----------------< io.github.edidada.csdiy:cs61b-fa26 >-----------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9888703Z [INFO] Building cs61b-fa26 1.0-SNAPSHOT                                  [1/13]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9889906Z [INFO]   from pom.xml
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9890536Z [INFO] --------------------------------[ pom ]---------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9939175Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:28.9941259Z [INFO] --- install:3.1.3:install-file (default-cli) @ cs61b-fa26 ---
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.1503341Z [INFO] Installing /home/runner/work/cs61b-fa26/cs61b-fa26/.course-libs/jh61b.jar to /home/runner/.m2/repository/edu/berkeley/cs61b/jh61b/fa26-pinned/jh61b-fa26-pinned.jar
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.1617290Z [INFO] Installing /tmp/mvninstall5216982197928913313.pom to /home/runner/.m2/repository/edu/berkeley/cs61b/jh61b/fa26-pinned/jh61b-fa26-pinned.pom
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2200167Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2200855Z [INFO] Reactor Summary for cs61b-fa26 1.0-SNAPSHOT:
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2201273Z [INFO] 
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2207822Z [INFO] lab02 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2208675Z [INFO] lab03 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2209069Z [INFO] lab05 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2209443Z [INFO] lab06 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2209889Z [INFO] lab07 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2210459Z [INFO] lab09 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2210946Z [INFO] lab10 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2211306Z [INFO] proj1 .............................................. SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2211663Z [INFO] hw01 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2212014Z [INFO] hw02 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2212496Z [INFO] hw03 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2213183Z [INFO] hw05 ............................................... SKIPPED
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2213689Z [INFO] cs61b-fa26 ......................................... SUCCESS [  0.232 s]
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2214213Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2214574Z [INFO] BUILD SUCCESS
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2214883Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2217177Z [INFO] Total time:  1.489 s
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2218892Z [INFO] Finished at: 2026-11-09T04:51:29Z
+test (gradle)	Run python scripts/setup_dependencies.py	2026-11-09T04:51:29.2219455Z [INFO] ------------------------------------------------------------------------
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	﻿2026-11-09T04:51:29.2595247Z ##[group]Run for m in hw01 hw02 hw03 hw05; do
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2595790Z [36;1mfor m in hw01 hw02 hw03 hw05; do[0m
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2596111Z [36;1m  gradle :$m:test --no-daemon || exit 1[0m
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2596400Z [36;1mdone[0m
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2610296Z shell: /usr/bin/bash -e {0}
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2610553Z env:
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2610875Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2611348Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2611730Z   MAVEN_ARGS: -ntp
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2611986Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2612298Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2612589Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2613017Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2613437Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2613946Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2614256Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.2614521Z ##[endgroup]
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8168750Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8170779Z Welcome to Gradle 8.14.3!
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8171115Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8171317Z Here are the highlights of this release:
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8171795Z  - Java 24 support
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8178980Z  - GraalVM Native Image toolchain selection
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8179475Z  - Enhancements to test reporting
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8179885Z  - Build Authoring improvements
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8180146Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8180490Z For more details see https://docs.gradle.org/8.14.3/release-notes.html
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:29.8180940Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:30.2142492Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:31.2177437Z Daemon will be stopped at the end of the build 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:44.3177232Z > Task :hw01:compileJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:44.4153793Z > Task :hw01:processResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:44.4193448Z > Task :hw01:classes
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:47.4140207Z > Task :hw01:compileTestJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:47.4141482Z > Task :hw01:processTestResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:47.4142500Z > Task :hw01:testClasses
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:48.8143759Z > Task :hw01:test
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:48.8157345Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1794199894746.json
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:48.8164283Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:48.8997601Z BUILD SUCCESSFUL in 19s
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:48.9007802Z 3 actionable tasks: 3 executed
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:49.6467000Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:50.6446186Z Daemon will be stopped at the end of the build 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2454344Z > Task :hw02:compileJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2482739Z > Task :hw02:processResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2485200Z > Task :hw02:classes
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2485996Z > Task :hw02:compileTestJava NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2486541Z > Task :hw02:processTestResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2490262Z > Task :hw02:testClasses UP-TO-DATE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2491320Z > Task :hw02:test NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2492259Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1794199912217.json
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2811045Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2822538Z BUILD SUCCESSFUL in 6s
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:55.2823399Z 1 actionable task: 1 executed
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:56.0357997Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:51:57.0342848Z Daemon will be stopped at the end of the build 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:01.7351339Z > Task :hw03:compileJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:01.7352198Z > Task :hw03:processResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:01.7352935Z > Task :hw03:classes
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.1341968Z > Task :hw03:compileTestJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.1342881Z > Task :hw03:processTestResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.1343711Z > Task :hw03:testClasses
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.8343320Z > Task :hw03:test
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.9117363Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1794199918531.json
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.9118210Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.9122118Z BUILD SUCCESSFUL in 7s
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:02.9123264Z 3 actionable tasks: 3 executed
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:03.6491628Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:04.6472074Z Daemon will be stopped at the end of the build 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.3480928Z > Task :hw05:compileJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.3481500Z > Task :hw05:processResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.3481920Z > Task :hw05:classes
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.9477563Z > Task :hw05:compileTestJava
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.9500474Z > Task :hw05:processTestResources NO-SOURCE
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:09.9526636Z > Task :hw05:testClasses
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7480390Z > Task :hw05:test
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7490986Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1794199926152.json
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7492075Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7493032Z [Incubating] Problems report is available at: file:///home/runner/work/cs61b-fa26/cs61b-fa26/build/reports/problems/problems-report.html
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7494076Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7494741Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7495760Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7496608Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7497447Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7498336Z For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7499733Z 
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7500252Z BUILD SUCCESSFUL in 7s
+test (gradle)	Gradle builds (hw01 hw02 hw03 hw05)	2026-11-09T04:52:10.7500789Z 3 actionable tasks: 3 executed
+test (gradle)	Run actions/upload-artifact@v4	﻿2026-11-09T04:52:10.9208717Z ##[group]Run actions/upload-artifact@v4
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9209049Z with:
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9209374Z   name: hw-reports-gradle
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9209716Z   path: hw*/target/surefire-reports/
+test (gradle)	Run actions/upload-artifact@v4	hw*/build/reports/tests/
+test (gradle)	Run actions/upload-artifact@v4	
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9210084Z   if-no-files-found: warn
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9210338Z   compression-level: 6
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9210577Z   overwrite: false
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9210812Z   include-hidden-files: false
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9211059Z env:
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9211373Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9211845Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9212227Z   MAVEN_ARGS: -ntp
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9212487Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9212806Z   GRADLE_USER_HOME: /home/runner/.gradle
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9213108Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9213417Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9213873Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9214342Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9214678Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:10.9214943Z ##[endgroup]
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.0916560Z (node:3441) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.0918329Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.1072722Z With the provided path, there will be 16 files uploaded
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.1079297Z Artifact name is valid!
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.1079971Z Root directory input is valid!
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.4965625Z Beginning upload of artifact content to blob storage
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.5378772Z (node:3441) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:11.9270692Z Uploaded bytes 16211
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.0066111Z Finished uploading artifact content to blob storage!
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.0067257Z SHA256 digest of uploaded artifact zip is da18bb96f4dde8ab29d3b409bc26b86f9965ed6e264964b0f912e9ad30842f4e
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.0068329Z Finalizing artifact upload
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.4716809Z Artifact hw-reports-gradle.zip successfully finalized. Artifact ID 13650304142
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.4717896Z Artifact hw-reports-gradle has been successfully uploaded! Final size is 16211 bytes. Artifact ID is 13650304142
+test (gradle)	Run actions/upload-artifact@v4	2026-11-09T04:52:12.4723711Z Artifact download URL: https://github.com/edidada/cs61b-fa26/actions/runs/42564032343/artifacts/13650304142
+test (gradle)	Post Run gradle/actions/setup-gradle@v4	﻿2026-11-09T04:52:12.4962200Z Post job cleanup.
+test (gradle)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:52:12.7391566Z In post-action step
+test (gradle)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:52:12.7401456Z Cache is read-only: will not save state for use in subsequent builds.
+test (gradle)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:52:12.7407513Z Generating Job Summary
+test (gradle)	Post Run gradle/actions/setup-gradle@v4	2026-11-09T04:52:12.7425480Z Completed post-action step
+test (gradle)	Post Run actions/setup-java@v5	﻿2026-11-09T04:52:12.7708374Z Post job cleanup.
+test (gradle)	Post Run actions/checkout@v4	﻿2026-11-09T04:52:12.9246687Z Post job cleanup.
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0186244Z [command]/usr/bin/git version
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0229846Z git version 2.56.0
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0267857Z Temporarily overriding HOME='/home/runner/work/_temp/34597297-132f-4ae1-89e0-c68e76f7216a' before making global git config changes
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0271487Z Adding repository directory to the temporary git global config as a safe directory
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0274021Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cs61b-fa26/cs61b-fa26
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0319115Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0356588Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0583888Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0619618Z http.https://github.com/.extraheader
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0631282Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0672420Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0897780Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (gradle)	Post Run actions/checkout@v4	2026-11-09T04:52:13.0938671Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (gradle)	Complete job	﻿2026-11-09T04:52:13.1334011Z Cleaning up orphan processes
+test (gradle)	Complete job	2026-11-09T04:52:13.1662849Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4, gradle/actions/setup-gradle@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
