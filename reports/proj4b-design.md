@@ -106,3 +106,12 @@ k>0：上述语义查询外，加上R次区间复制/求和约O(R(log Y+Yrange))
 4C计划/实施使用原始2项不改测试，额外Floyd-Warshall随机图独立oracle、跨义陷阱、重边/非连续ID/深链/环、公开大数据示例、HTTP和原前端按钮；结果以4C最终HEAD Actions为准。
 4D另加独立分支/YAML与正k计数oracle、缺失词频/年份边界/交集后排名/大数据案例回归；本设计文档不提前声称这些通过。
 私有Checkpoint概念题、Gradescope设计评阅、私有代码grader和官方style检查仍待用户有相应访问权限时验收。保存本设计是跨机器学习复现材料，不向课堂系统提交AI生成文档。
+
+## 附录：实际下载小文件追踪（2026-11-11）
+
+已读取4C最终7404bf0远程artifact中的synsets_size16/hyponyms_size16、EECS两文件和word_history_eecs，未在本地运行实验。文件由官方Drive包解压，原始小文件和哈希随4C artifact保存。
+
+size16中change输入起点为2和8。节点2可达{2,3,4,5}，节点8可达{8,9,10}；投影合并去重后得到上述10词。occurrence起点1可达{1,2,3,4,5,11,12,13}。与change结果交集得到8词，虽然两个词的可达节点交集不含11，但11里的alteration/modification已从2进入词集合，说明必须在词层求交。节点3包含transition，不能因此进入节点14再得到flashback；同理2包含alteration不能跳入11得到adjustment/conversion/mutation。
+
+EECS：CS61A为0，直接子节点1(CS61B bee)、2(CS61C)；1可达11(CS170)，11又可达12/13/14/19。bee同时出现在21(EECS16B bee)，但CS61A遍历到1中的bee后，不得跨入21。
+词频文件中CS61A/CS61B在2018的原始次数分别为2147483648/2147483649，超过int最大值；CS61C和CS170各500。因此2010–2020、k=4的正k预期恰好是字母序[CS170, CS61A, CS61B, CS61C]，不能用int读取，也不能在k=0阶段过滤无词频的bee。这里是静态文件追踪，4D代码动态验证另行完成。
