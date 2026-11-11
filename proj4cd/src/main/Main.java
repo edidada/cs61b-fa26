@@ -32,8 +32,8 @@ public class Main {
     public static void main(String[] args) {
         NgordnetServer hns = new NgordnetServer();
 
-        // TODO: modify HyponymsHandler
-        // hns.register("hyponyms", new HyponymsHandler());
+        WordNet wordNet = new WordNet(SYNSETS_SIZE82191_FILE, HYPONYMS_SIZE82191_FILE);
+        hns.register("hyponyms", new HyponymsHandler(wordNet));
         // Register all handlers before calling startUp.
         hns.startUp();
 

@@ -1,50 +1,74 @@
 package main;
-import edu.berkeley.eecs.inst.cs61b.ngrams.StaffNGramMap;
 
-import java.util.TreeMap;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import static main.TimeSeries.MAX_YEAR;
+import static main.TimeSeries.MIN_YEAR;
 
-/** An object that provides utility methods for making queries on the
- *  Google NGrams dataset (or a subset thereof).
- *
- *  An NGramMap stores pertinent data from a "words file" and a "counts
- *  file". It is not a map in the strict sense, but it does provide additional
- *  functionality.
- *
- *  This is a stripped-down version of the staff solution for 4A. Feel free
- *  to replace this file with your own implementation.
- *
- *  @author Josh Hug
- */
-public class NGramMap extends StaffNGramMap {
+/** Index files once, retaining sparse word series and corpus totals. */
+public class NGramMap {
+    private final Map<String, TimeSeries> histories = new HashMap<>();
+    private final TimeSeries totals = new TimeSeries();
 
-    public static final int MIN_YEAR = 1400;
-    public static final int MAX_YEAR = 2100;
-
-    /** Constructs an NGramMap from WORDHISTORYFILENAME and YEARHISTORYFILENAME. */
     public NGramMap(String wordHistoryFilename, String yearHistoryFilename) {
-        super(wordHistoryFilename, yearHistoryFilename);
+        try (BufferedReader words = Files.newBufferedReader(Path.of(wordHistoryFilename), StandardCharsets.UTF_8);
+             BufferedReader years = Files.newBufferedReader(Path.of(yearHistoryFilename), StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = words.readLine()) != null) {
+                if (!line.isBlank()) {
+                    String[] fields = line.split("\\t");
+                    histories.computeIfAbsent(fields[0], ignored -> new TimeSeries())
+                            .put(Integer.parseInt(fields[1]), Double.parseDouble(fields[2]));
+                }
+            }
+            while ((line = years.readLine()) != null) {
+                if (!line.isBlank()) {
+                    String[] fields = line.split(",");
+                    totals.put(Integer.parseInt(fields[0]), Double.parseDouble(fields[1]));
+                }
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException("Cannot load NGram data", e);
+        }
     }
 
-    /**
-     * Provides the history of WORD between STARTYEAR and ENDYEAR, inclusive of both ends. The
-     * returned TimeSeries should be a copy, not a link to this NGramMap's TimeSeries. In other
-     * words, changes made to the object returned by this function should not also affect the
-     * NGramMap. This is also known as a "defensive copy". If the word is not in the data files,
-     * returns an empty TimeSeries.
-     */
-    public TreeMap<Integer, Double> countHistory(String word, int startYear, int endYear) {
-        return super.countHistory(word, startYear, endYear);
+    public TimeSeries countHistory(String word, int startYear, int endYear) {
+        TimeSeries history = histories.get(word);
+        return history == null ? new TimeSeries() : new TimeSeries(history, startYear, endYear);
     }
 
-    /**
-     * Provides the history of WORD. The returned TimeSeries should be a copy, not a link to this
-     * NGramMap's TimeSeries. In other words, changes made to the object returned by this function
-     * should not also affect the NGramMap. This is also known as a "defensive copy". If the word
-     * is not in the data files, returns an empty TimeSeries.
-     */
-    public TreeMap<Integer, Double> countHistory(String word) {
+    public TimeSeries countHistory(String word) {
         return countHistory(word, MIN_YEAR, MAX_YEAR);
     }
 
-    // TODO: Replace this file with your own implementation if you want all the methods of an NGramMap
+    public TimeSeries totalCountHistory() {
+        return new TimeSeries(totals, MIN_YEAR, MAX_YEAR);
+    }
+
+    public TimeSeries weightHistory(String word, int startYear, int endYear) {
+        return countHistory(word, startYear, endYear).dividedBy(totals);
+    }
+
+    public TimeSeries weightHistory(String word) {
+        return weightHistory(word, MIN_YEAR, MAX_YEAR);
+    }
+
+    public TimeSeries summedWeightHistory(Collection<String> words, int startYear, int endYear) {
+        TimeSeries sum = new TimeSeries();
+        for (String word : words) {
+            sum = sum.plus(weightHistory(word, startYear, endYear));
+        }
+        return sum;
+    }
+
+    public TimeSeries summedWeightHistory(Collection<String> words) {
+        return summedWeightHistory(words, MIN_YEAR, MAX_YEAR);
+    }
 }

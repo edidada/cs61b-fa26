@@ -2,13 +2,11 @@ package main;
 
 import browser.NgordnetQueryHandler;
 
-
 public class AutograderBuddy {
-    /** Returns a HyponymHandler */
+    /** For k=0 the NGrams paths are deliberately unused. */
     public static NgordnetQueryHandler getHyponymsHandler(
             String wordHistoryFile, String yearHistoryFile,
             String synsetFile, String hyponymFile) {
-
-        throw new RuntimeException("Please fill out AutograderBuddy.java!");
+        return new HyponymsHandler(new WordNet(synsetFile, hyponymFile));
     }
 }

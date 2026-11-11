@@ -1,0 +1,158 @@
+{
+  "repository": "Berkeley-CS61B/library-fa26",
+  "commit": "7d9a380f3d881630a8cbf6382945a2d27618e728",
+  "jars": [
+    {
+      "name": "algs4.jar",
+      "git_blob": "e1703efb7a09c244fdfb0ee3d08aa7c28e1b408c"
+    },
+    {
+      "name": "annotations-13.0.jar",
+      "git_blob": "fb794be912bab43196dfa974b3e6d447e7f03d34"
+    },
+    {
+      "name": "gson-2.14.0.jar",
+      "git_blob": "1d5db44d8704224c06034aaf1e67ff1ac29d9831"
+    },
+    {
+      "name": "jakarta.annotation-api-2.1.1.jar",
+      "git_blob": "e13b7df5998884f76c6af8caec06f1f82181d47f"
+    },
+    {
+      "name": "jakarta.enterprise.cdi-api-4.0.1.jar",
+      "git_blob": "dc7ae1c5575ca463e53aa3b6b7bded048ec66d03"
+    },
+    {
+      "name": "jakarta.enterprise.lang-model-4.0.1.jar",
+      "git_blob": "606e3ca25393d465d2debc6d5fd691af96fe2b8a"
+    },
+    {
+      "name": "jakarta.inject-api-2.0.1.jar",
+      "git_blob": "a92e099d4fc25523e2830fa9b8181d319c9369a7"
+    },
+    {
+      "name": "jakarta.interceptor-api-2.1.0.jar",
+      "git_blob": "c38d69c5a257bd09ee6581de93f3a246fd89a6da"
+    },
+    {
+      "name": "jakarta.servlet-api-6.0.0.jar",
+      "git_blob": "d15c10cb307f456c4db6d7c673ed3733cc688add"
+    },
+    {
+      "name": "jakarta.transaction-api-2.0.1.jar",
+      "git_blob": "b1e7da4be43dd1a10393608d1aff9c7a87460461"
+    },
+    {
+      "name": "jama-1.0.3.jar",
+      "git_blob": "e4013a72733fce7ea98695261c804450ed40d004"
+    },
+    {
+      "name": "javalin-7.2.3.jar",
+      "git_blob": "7dc77e8335605edf7cae647b65f07085201ac6fb"
+    },
+    {
+      "name": "jetty-annotations-12.1.12.jar",
+      "git_blob": "2c0ae9a9008e22c309c314e3429e5dcfac83812a"
+    },
+    {
+      "name": "jetty-ee-webapp-12.1.12.jar",
+      "git_blob": "0d65f27b798888422135d843f1a5eed05b480e49"
+    },
+    {
+      "name": "jetty-ee10-annotations-12.1.12.jar",
+      "git_blob": "23cc036a953c8746d7f8e2fd76109d0435f4a994"
+    },
+    {
+      "name": "jetty-ee10-plus-12.1.12.jar",
+      "git_blob": "6c76b94a5eee907ceccd22f24f265a44f2dc0118"
+    },
+    {
+      "name": "jetty-ee10-servlet-12.1.12.jar",
+      "git_blob": "a61daf960d55fb51d966e6049e02e7a2334e46ea"
+    },
+    {
+      "name": "jetty-ee10-webapp-12.1.12.jar",
+      "git_blob": "6357630a81f9fdc3a1bca4e4bd640b142caca8a1"
+    },
+    {
+      "name": "jetty-ee10-websocket-jetty-server-12.1.12.jar",
+      "git_blob": "3933af95c1defbd621f4d8ae9801e523d46aa099"
+    },
+    {
+      "name": "jetty-ee10-websocket-servlet-12.1.12.jar",
+      "git_blob": "59167cf33e53f194235e905f37049f0c59583d31"
+    },
+    {
+      "name": "jetty-http-12.1.12.jar",
+      "git_blob": "32d99ebaeacd51ceaf79b6afe0b221f84abb5487"
+    },
+    {
+      "name": "jetty-io-12.1.12.jar",
+      "git_blob": "19749db4ef6768fb71ed224e93b741ebd4c6d5cc"
+    },
+    {
+      "name": "jetty-jndi-12.1.12.jar",
+      "git_blob": "29e24f0ffd1c109fe0c6727074cd466539443d79"
+    },
+    {
+      "name": "jetty-plus-12.1.12.jar",
+      "git_blob": "eb1a9c16f5202af6553047c9fda4045c71ff7e7b"
+    },
+    {
+      "name": "jetty-security-12.1.12.jar",
+      "git_blob": "365d07a073652d60eb75cd8af6bc3e08161516f6"
+    },
+    {
+      "name": "jetty-server-12.1.12.jar",
+      "git_blob": "16aaac5c6d8cda31a24005d6cd17085e7c503376"
+    },
+    {
+      "name": "jetty-session-12.1.12.jar",
+      "git_blob": "818d12ed9efbe60fef489ffdb896163b599ed328"
+    },
+    {
+      "name": "jetty-util-12.1.12.jar",
+      "git_blob": "46addb012a4c48ca4944a6ef4a8711afd58ac1bc"
+    },
+    {
+      "name": "jetty-websocket-core-common-12.1.12.jar",
+      "git_blob": "1284c75bf3b7ee29e895b7a5ffe0b241f125bb7e"
+    },
+    {
+      "name": "jetty-websocket-core-server-12.1.12.jar",
+      "git_blob": "82ee0f886cec702831525c8ea2dc7bb579378372"
+    },
+    {
+      "name": "jetty-websocket-jetty-api-12.1.12.jar",
+      "git_blob": "fcac68e831a08a8bd9f51815340db0817445407e"
+    },
+    {
+      "name": "jetty-websocket-jetty-common-12.1.12.jar",
+      "git_blob": "0cdf68b07372b42506dba274b361887a0368ce13"
+    },
+    {
+      "name": "jetty-websocket-jetty-server-12.1.12.jar",
+      "git_blob": "7412ca1edb5862d714add9c1112bbdae4fff49f9"
+    },
+    {
+      "name": "jetty-xml-12.1.12.jar",
+      "git_blob": "dc11dcc588583cf0934aa9938dae15ef75fae6da"
+    },
+    {
+      "name": "kotlin-stdlib-2.2.20.jar",
+      "git_blob": "0decc7909664ac5e1543a0fe89fd4bd0048fbf09"
+    },
+    {
+      "name": "slf4j-api-2.0.18.jar",
+      "git_blob": "fbf1f2014f956e9c8c955fe001649ade3163e7e3"
+    },
+    {
+      "name": "slf4j-simple-2.0.18.jar",
+      "git_blob": "20bde0c46914106ce313590f5c67b415e50ba4a2"
+    },
+    {
+      "name": "xchart-4.0.4.jar",
+      "git_blob": "ec0c86c432d52c906fe01cda6c00ad087551e7d2"
+    }
+  ]
+}

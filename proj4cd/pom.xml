@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+ <modelVersion>4.0.0</modelVersion><groupId>io.github.edidada</groupId><artifactId>cs61b-proj4c</artifactId><version>1.0-SNAPSHOT</version>
+ <properties><maven.compiler.release>25</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>
+ <dependencies>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>algs4</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/algs4.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>annotations-13.0</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/annotations-13.0.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>gson-2.14.0</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/gson-2.14.0.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.annotation-api-2.1.1</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.annotation-api-2.1.1.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.enterprise.cdi-api-4.0.1</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.enterprise.cdi-api-4.0.1.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.enterprise.lang-model-4.0.1</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.enterprise.lang-model-4.0.1.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.inject-api-2.0.1</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.inject-api-2.0.1.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.interceptor-api-2.1.0</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.interceptor-api-2.1.0.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.servlet-api-6.0.0</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.servlet-api-6.0.0.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jakarta.transaction-api-2.0.1</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jakarta.transaction-api-2.0.1.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jama-1.0.3</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jama-1.0.3.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>javalin-7.2.3</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/javalin-7.2.3.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-annotations-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-annotations-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee-webapp-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee-webapp-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-annotations-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-annotations-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-plus-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-plus-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-servlet-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-servlet-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-webapp-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-webapp-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-websocket-jetty-server-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-websocket-jetty-server-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-ee10-websocket-servlet-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-ee10-websocket-servlet-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-http-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-http-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-io-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-io-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-jndi-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-jndi-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-plus-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-plus-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-security-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-security-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-server-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-server-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-session-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-session-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-util-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-util-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-websocket-core-common-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-websocket-core-common-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-websocket-core-server-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-websocket-core-server-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-websocket-jetty-api-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-websocket-jetty-api-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-websocket-jetty-common-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-websocket-jetty-common-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-websocket-jetty-server-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-websocket-jetty-server-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>jetty-xml-12.1.12</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/jetty-xml-12.1.12.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>kotlin-stdlib-2.2.20</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/kotlin-stdlib-2.2.20.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>slf4j-api-2.0.18</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/slf4j-api-2.0.18.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>slf4j-simple-2.0.18</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/slf4j-simple-2.0.18.jar</systemPath></dependency>
+<dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>xchart-4.0.4</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/xchart-4.0.4.jar</systemPath></dependency>
+
+  <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>5.11.4</version><scope>test</scope></dependency>
+  <dependency><groupId>com.google.truth</groupId><artifactId>truth</artifactId><version>1.4.4</version><scope>test</scope></dependency>
+ </dependencies>
+ <build><sourceDirectory>src</sourceDirectory><testSourceDirectory>tests</testSourceDirectory><plugins>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
+ </plugins></build>
+</project>
+
+
+
