@@ -1,7 +1,7 @@
 package main;
 
-import demo.DummyHistoryHandler;
-import demo.DummyHistoryTextHandler;
+
+
 import org.slf4j.LoggerFactory;
 
 import browser.NgordnetServer;
@@ -22,16 +22,12 @@ public class Main {
     public static void main(String[] args) {
         NgordnetServer hns = new NgordnetServer();
 
-        /* The following code might be useful to you.
-
-        NGramMap ngm = new NGramMap(WORD_HISTORY_SIZE3_FILE, YEAR_HISTORY_FILE);
-
-        */
-
-        hns.register("history", new DummyHistoryHandler());
-        hns.register("historytext", new DummyHistoryTextHandler());
+        NGramMap ngm = new NGramMap(WORD_HISTORY_SIZE14377_FILE, YEAR_HISTORY_FILE);
+        hns.register("history", new HistoryHandler(ngm));
+        hns.register("historytext", new HistoryTextHandler(ngm));
         hns.startUp();
 
         System.out.println("Finished server startup! Visit http://localhost:4567/ngordnet_4a.html");
     }
 }
+

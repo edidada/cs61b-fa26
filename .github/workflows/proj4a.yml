@@ -1,0 +1,47 @@
+name: CS61B Project 4A
+on:
+  push:
+    branches: [edidada/proj4a]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.2.1'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Official dependencies and data
+        run: |
+          pip install gdown==5.2.0
+          bash scripts/fetch_proj4a.sh
+      - name: Maven tests
+        if: matrix.tool == 'maven'
+        run: mvn -B -f proj4a/pom.xml test
+      - name: Gradle tests
+        if: matrix.tool == 'gradle'
+        run: gradle -p proj4a test --no-daemon
+      - name: Real HTTP endpoints
+        run: bash scripts/verify_proj4a_http.sh '${{ matrix.tool }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proj4a-${{ matrix.tool }}
+          path: |
+            proj4a/target/surefire-reports/
+            proj4a/build/test-results/
+            proj4a/evidence/
