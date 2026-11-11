@@ -7,9 +7,10 @@
 仅开放格点连四邻居，重复open不增加计数，N<=0拒绝，坐标越界抛IndexOutOfBounds。
 构造O(N²)空间/时间，每操作常数次并查集调用；计数O(1)，不自写UF替代要求。
 
-保留原PercolationTest与官方PercolationStats，不修改测试或统计公式。
+保留两个原PercolationTest真实测试与官方PercolationStats统计公式。原测试另有故意fail占位方法，首轮因此失败；按starter明确指示填成倒灌断言，不修改或弱化两个真实原测试。
 新增4项补充测试，独立BFS洪泛oracle核对N=1–12多轮每步的全部格点，
 覆盖重复open、计数、full、渗流、单格、倒灌、边界及已提供统计类单格性质。
 Maven/Gradle在Actions运行并保存XML，本地不编译/模拟。
 私人grader/style评分、交互GUI、可选阈值统计研究和运行时间分析尚未完成；
 通过功能测试不能替代这些项目。最终提交CI成功后才登记公开功能验证。
+
