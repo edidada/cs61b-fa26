@@ -91,4 +91,3 @@ public interface Deque61B<T> extends Iterable<T> {
      */
     T getRecursive(int index);
 }
-
