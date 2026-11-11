@@ -33,14 +33,13 @@ public class HyponymsHandler extends NgordnetQueryHandler {
         return map;
     }
 
-    @Override
-    public String handle(NgordnetQuery query) {
+    public List<String> select(NgordnetQuery query) {
         if (query.k() < 0) {
             throw new IllegalArgumentException("k must be nonnegative");
         }
         List<String> candidates = wordNet.hyponyms(query.words());
         if (query.k() == 0 || candidates.isEmpty()) {
-            return candidates.toString();
+            return candidates;
         }
         List<RankedWord> ranked = new ArrayList<>();
         NGramMap counts = counts();
@@ -60,7 +59,12 @@ public class HyponymsHandler extends NgordnetQueryHandler {
             result.add(ranked.get(i).word());
         }
         result.sort(Comparator.naturalOrder());
-        return result.toString();
+        return result;
+    }
+
+    @Override
+    public String handle(NgordnetQuery query) {
+        return select(query).toString();
     }
 
     private record RankedWord(String word, double count) { }

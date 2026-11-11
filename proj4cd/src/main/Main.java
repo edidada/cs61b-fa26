@@ -32,9 +32,14 @@ public class Main {
     public static void main(String[] args) {
         NgordnetServer hns = new NgordnetServer();
 
-        hns.register("hyponyms", AutograderBuddy.getHyponymsHandler(
-                WORD_HISTORY_SIZE14377_FILE, YEAR_HISTORY_FILE,
-                SYNSETS_SIZE82191_FILE, HYPONYMS_SIZE82191_FILE));
+        WordNet wordNet = new WordNet(SYNSETS_SIZE82191_FILE, HYPONYMS_SIZE82191_FILE);
+        NGramMap counts = new NGramMap(WORD_HISTORY_SIZE14377_FILE, YEAR_HISTORY_FILE);
+        HyponymsHandler hyponyms = new HyponymsHandler(wordNet, () -> counts);
+        hns.register("hyponyms", hyponyms);
+        hns.register("history", new HistoryHandler(counts));
+        hns.register("historytext", new HistoryTextHandler(counts));
+        hns.register("hypohist", new HypohistHandler(hyponyms, new HistoryHandler(counts)));
+        hns.register("hypohisttext", new HypohistHandler(hyponyms, new HistoryTextHandler(counts)));
         // Register all handlers before calling startUp.
         hns.startUp();
 

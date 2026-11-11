@@ -15,4 +15,4 @@
 
 ## 未完成与范围
 
-官方Gradescope私有grader和style checker未执行。4B私有概念题和人工设计评阅未完成。可选Hypohist按钮及合并4A所有图表路由尚未实现；本分支完成核心正k与原始Hyponyms前端，不宣称可选扩展完成。复现脚本scripts/fetch_proj4c.sh、scripts/verify_proj4d_http.sh、scripts/verify_proj4d_browser.cjs均在仓库，无新增Python文件。
+官方Gradescope私有grader和style checker未执行。4B私有概念题和人工设计评阅未完成。已进一步接入4A History/HistoryText和可选Hypohist/HypohistText五条路由，新增文本按钮。Hypohist复用同一排名选择函数再委托历史处理器，避免解析列表字符串；浏览器验收全部按钮、所选五词标签和图像解码，保存截图。Main一次创建图和词频索引并共享，工厂单独使用时仍懒加载。复现脚本scripts/fetch_proj4c.sh、scripts/verify_proj4d_http.sh、scripts/verify_proj4d_browser.cjs均在仓库，无新增Python文件。
