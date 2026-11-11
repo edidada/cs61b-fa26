@@ -32,8 +32,9 @@ public class Main {
     public static void main(String[] args) {
         NgordnetServer hns = new NgordnetServer();
 
-        WordNet wordNet = new WordNet(SYNSETS_SIZE82191_FILE, HYPONYMS_SIZE82191_FILE);
-        hns.register("hyponyms", new HyponymsHandler(wordNet));
+        hns.register("hyponyms", AutograderBuddy.getHyponymsHandler(
+                WORD_HISTORY_SIZE14377_FILE, YEAR_HISTORY_FILE,
+                SYNSETS_SIZE82191_FILE, HYPONYMS_SIZE82191_FILE));
         // Register all handlers before calling startUp.
         hns.startUp();
 

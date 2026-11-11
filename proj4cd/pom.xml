@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
- <modelVersion>4.0.0</modelVersion><groupId>io.github.edidada</groupId><artifactId>cs61b-proj4c</artifactId><version>1.0-SNAPSHOT</version>
+ <modelVersion>4.0.0</modelVersion><groupId>io.github.edidada</groupId><artifactId>cs61b-proj4d</artifactId><version>1.0-SNAPSHOT</version>
  <properties><maven.compiler.release>25</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>
  <dependencies>
 <dependency><groupId>edu.berkeley.cs61b.pinned</groupId><artifactId>algs4</artifactId><version>fa26</version><scope>system</scope><systemPath>${project.basedir}/libs/algs4.jar</systemPath></dependency>
