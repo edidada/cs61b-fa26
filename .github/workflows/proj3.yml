@@ -35,6 +35,18 @@ jobs:
       - name: Gradle original tests
         if: matrix.tool == 'gradle'
         run: gradle -p proj3 test --no-daemon
+      - name: Threshold and comparative runtime study
+        shell: bash
+        run: |
+          mkdir -p proj3/study
+          java -version > proj3/study/environment.txt 2>&1
+          uname -a >> proj3/study/environment.txt
+          if [ '${{ matrix.tool }}' = maven ]; then
+            classes=proj3/target/classes:proj3/target/test-classes
+          else
+            classes=proj3/build/classes/java/main:proj3/build/classes/java/test
+          fi
+          timeout 180 java -cp "$classes:proj3/libs/algs4.jar" PercolationStudy > proj3/study/results.csv
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -42,5 +54,7 @@ jobs:
           path: |
             proj3/target/surefire-reports/
             proj3/build/test-results/
+            proj3/study/
+
 
 

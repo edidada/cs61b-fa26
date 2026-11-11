@@ -14,3 +14,9 @@ Maven/Gradle在Actions运行并保存XML，本地不编译/模拟。
 私人grader/style评分、交互GUI、可选阈值统计研究和运行时间分析尚未完成；
 通过功能测试不能替代这些项目。最终提交CI成功后才登记公开功能验证。
 
+
+新增可选研究驱动PercolationStudy：固定StdRandom种子运行官方Stats.main；
+另实现QuickFindUF对照（生产实现保持WeightedQuickUnionUF），N=20/40/80、
+T=30/60、各3次重复；同种子两算法的每次开格轨迹一致，并断言平均阈值相同。
+预热后交错计时顺序，使用官方Stopwatch；CSV保留每轮秒数及阈值，不能
+把共享runner上的小样本计时解释为严格复杂度证明。实验尚需最终CI结果验收。
