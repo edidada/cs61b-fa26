@@ -16,3 +16,8 @@ test -n "$source_file"
 mkdir -p "$module/data"
 cp "$(dirname "$source_file")/"*.csv "$(dirname "$source_file")/"*.txt "$module/data/"
 sha256sum "$module/data/"*.csv "$module/data/"*.txt > "$module/evidence/data-sha256.txt"
+
+# Small official input examples for reproducible design tracing (not the large corpus).
+for name in synsets_size16.txt hyponyms_size16.txt synsets_eecs.txt hyponyms_eecs.txt word_history_eecs.csv; do
+  cp "$module/data/$name" "$module/evidence/$name"
+done
