@@ -35,6 +35,15 @@ jobs:
       - name: Gradle tests
         if: matrix.tool == 'gradle'
         run: gradle -p proj4a test --no-daemon
+      - uses: actions/setup-node@v4
+        if: matrix.tool == 'maven'
+        with:
+          node-version: '22'
+      - name: Browser acceptance dependencies
+        if: matrix.tool == 'maven'
+        run: |
+          npm install --prefix .ci-browser playwright@1.56.1 --no-package-lock
+          .ci-browser/node_modules/.bin/playwright install --with-deps chromium
       - name: Real HTTP endpoints
         run: bash scripts/verify_proj4a_http.sh '${{ matrix.tool }}'
       - uses: actions/upload-artifact@v4

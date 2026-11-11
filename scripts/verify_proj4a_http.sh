@@ -15,3 +15,7 @@ for i in $(seq 1 60); do
 done
 test "$ready" = true
 java -Djava.awt.headless=true -cp "$classes:libs/*" HttpProbe > evidence/http.txt
+
+if [[ "$tool" = maven ]]; then
+  node ../scripts/verify_proj4a_browser.cjs
+fi
