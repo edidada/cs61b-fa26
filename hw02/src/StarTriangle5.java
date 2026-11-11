@@ -4,10 +4,11 @@ public class StarTriangle5 {
      * The first row contains 1 star, the second 2 stars, and so on.
      */
     public static void starTriangle5() {
-        // TODO: Fill in this function
+        StarTriangleN.starTriangle(5);
     }
 
     void main() {
         starTriangle5();
     }
 }
+

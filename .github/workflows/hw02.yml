@@ -1,0 +1,39 @@
+name: CS61B HW02
+on:
+  push:
+    branches: [edidada/hw02]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.2.1'
+      - name: Maven supplementary tests
+        if: matrix.tool == 'maven'
+        run: mvn -B -f hw02/pom.xml test
+      - name: Gradle supplementary tests
+        if: matrix.tool == 'gradle'
+        run: gradle -p hw02 test --no-daemon
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hw02-${{ matrix.tool }}
+          path: |
+            hw02/target/surefire-reports/
+            hw02/build/test-results/
+
+
