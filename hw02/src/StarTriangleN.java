@@ -13,4 +13,3 @@ public class StarTriangleN {
         starTriangle(7);
     }
 }
-

@@ -18,4 +18,3 @@ public class DoubleUp {
         IO.println(doubleUp("cat"));
     }
 }
-

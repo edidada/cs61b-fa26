@@ -16,4 +16,3 @@ public class PrintIndexed {
         printIndexed("cat"); // should print c2a1t0
     }
 }
-
