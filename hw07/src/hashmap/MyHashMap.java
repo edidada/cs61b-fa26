@@ -80,6 +80,15 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
         }
         return null;
     }
+    /** Optional conditional removal; a mapped null still counts as present. */
+    public V remove(K key, V value) {
+        Node node = find(key);
+        if (node == null || !(node.value == value || (node.value != null && node.value.equals(value)))) {
+            return null;
+        }
+        return remove(key);
+    }
+
     private Set<K> keySnapshot() {
         Set<K> keys = new HashSet<>();
         for (Collection<Node> bucket : buckets) {

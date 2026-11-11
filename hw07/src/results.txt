@@ -1,0 +1,45 @@
+CS61B HW07 speed observations, 2026-11-11 (Codex-assisted public self-study).
+Remote evidence: commit 1c208a26d456af11ed4474bef97b1a30df4ae2f6,
+https://github.com/edidada/cs61b-fa26/actions/runs/43036362336
+JDK17.0.21, Ubuntu24.04 shared Actions runners; original speed drivers unchanged.
+N=1000/5000/10000. Random strings L=8 (the actual driver asks L).
+
+Maven seconds, each row lists the three N values:
+Random ULLMap .01/.05/.20; MyHashMap .00/.00/.01; JDK HashMap .00/.00/.00.
+Ordered ULLMap .02/.08/.32; MyHashMap .01/.01/.01; JDK HashMap .00/.00/.01.
+Buckets ArrayList .02/.01/.01; LinkedList .01/.01/.01; HashSet .01/.01/.01;
+Stack .00/.00/.00; ArrayDeque .00/.01/.01.
+
+Gradle seconds:
+Random ULLMap .01/.06/.21; MyHashMap .00/.01/.01; JDK HashMap .00/.00/.00.
+Ordered ULLMap .02/.11/.31; MyHashMap .01/.01/.02; JDK HashMap .00/.00/.01.
+Buckets ArrayList .02/.02/.01; LinkedList .01/.02/.01; HashSet .01/.01/.01;
+Stack .01/.00/.01; ArrayDeque .01/.01/.01.
+
+The linked-list map grows noticeably more expensive with N; each new key may
+scan existing keys, giving quadratic total work. With well-spread hashes and
+geometric resizing, MyHashMap has expected amortized constant insertion and
+linear total insertion work. Ascending input damages an unbalanced BST but
+does not inherently make hash buckets unbalanced. A hash map suits equality
+lookup without ordered/range queries; a balanced tree offers sorted keys and
+logarithmic operations even when hash distribution is poor.
+
+All five bucket types complete successfully. These short single runs have
+millisecond quantization, two-decimal output, JIT and ordering noise, plus
+non-fixed random inputs. Zero means below displayed precision, not zero cost.
+We cannot rank buckets reliably or claim a stable factor-of-ten ratio against
+JDK HashMap from these rounded values. More controlled larger repeated paired
+trials would be needed; these data do not prove asymptotic complexity.
+
+Using HashSet as a bucket does not automatically speed up find: this map scans
+Collection<Node> comparing node.key, and Node does not define key-based equality.
+With bounded expected bucket length, replacing a scan by expected O(1) key-aware
+lookup would change constants, not the already expected amortized O(1) map
+bound. In adversarial long buckets an appropriate inner key index can reduce
+search under its own hashing assumptions, but cannot promise worst-case O(1)
+when all key hashes collide. Supporting that requires suitable key equality
+and storage design, beyond simply swapping Collection implementations.
+
+No peer discussion or private course grading took place. These are explicit
+self-study observations, not a claim of the classroom discussion requirement.
+No local compilation or experiments were run.

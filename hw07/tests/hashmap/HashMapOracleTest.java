@@ -48,6 +48,9 @@ public class HashMapOracleTest {
         assertThrows(IllegalStateException.class,iterator::remove);
         assertThrows(UnsupportedOperationException.class,()->keys.add(9));
         keys.clear();assertEquals(0,map.size());
+        map.put(7,null);map.remove(7,"wrong");assertTrue(map.containsKey(7));
+        map.remove(7,null);assertFalse(map.containsKey(7));
+        map.put(8,"eight");assertNull(map.remove(8,"wrong"));assertEquals("eight",map.remove(8,"eight"));
         MyHashMap<Integer,Integer> small=new MyHashMap<>(1,.1);small.put(1,1);
         assertTrue(1.0/((Object[])buckets.get(small)).length<=.1);
         assertThrows(IllegalArgumentException.class,()->new MyHashMap<>(0));
