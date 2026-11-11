@@ -14,7 +14,33 @@ public class HttpProbe {
         var text = client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:4567/historytext" + query)).GET().build(), HttpResponse.BodyHandlers.ofString());
         if (text.statusCode() != 200) { throw new AssertionError(text); }
         String decoded = new Gson().fromJson(text.body(), String.class);
-        String expected = "request: {2006=2.44740192927834E-5, 2007=2.464488338318067E-5}\nairport: {2007=6.2068176510855946E-6}\n";
+        // The tiny 3-word fixture has different counts from the 14377-word file.
+        // Build the expected HTTP result directly from raw CSV, without NGramMap.
+        java.util.Map<Integer, Double> totals = new java.util.HashMap<>();
+        try (var lines = Files.lines(Path.of("data/year_history.csv"))) {
+            lines.forEach(line -> {
+                String[] fields = line.split(",");
+                totals.put(Integer.parseInt(fields[0]), Double.parseDouble(fields[1]));
+            });
+        }
+        java.util.Map<String, java.util.TreeMap<Integer, Double>> counts = new java.util.HashMap<>();
+        counts.put("request", new java.util.TreeMap<>());
+        counts.put("airport", new java.util.TreeMap<>());
+        try (var lines = Files.lines(Path.of("data/word_history_size14377.csv"))) {
+            lines.forEach(line -> {
+                int tab = line.indexOf('\t');
+                String word = line.substring(0, tab);
+                if (counts.containsKey(word)) {
+                    String[] fields = line.split("\t");
+                    int year = Integer.parseInt(fields[1]);
+                    if (year >= 2006 && year <= 2007) {
+                        counts.get(word).put(year, Double.parseDouble(fields[2]) / totals.get(year));
+                    }
+                }
+            });
+        }
+        String expected = "request: " + counts.get("request") + "\nairport: " + counts.get("airport") + "\n";
+        Files.writeString(Path.of("evidence/http-raw-csv-expected.txt"), expected);
         if (!expected.equals(decoded)) { throw new AssertionError(decoded); }
         Files.writeString(Path.of("evidence/http-historytext.json"), text.body());
         var response = client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:4567/history?words=cat,dog&startYear=1900&endYear=1950")).GET().build(), HttpResponse.BodyHandlers.ofString());

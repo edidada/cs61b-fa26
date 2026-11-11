@@ -113,11 +113,12 @@ public class NGramOracleTest {
         Path evidence = Path.of("evidence"); Files.createDirectories(evidence);
         Files.writeString(evidence.resolve("load-seconds.txt"), Double.toString(elapsed));
         HistoryHandler handler = new HistoryHandler(map);
+        int plotIndex = 0;
         for (List<String> words : List.of(List.of("cat", "dog"), List.of("missing-no-such-word"), List.of("cat", "cat"))) {
             byte[] bytes = Base64.getDecoder().decode(handler.handle(new NgordnetQuery(words, 1900, 1950, 0)));
             var image = ImageIO.read(new ByteArrayInputStream(bytes));
             assertNotNull(image); assertEquals(800, image.getWidth()); assertEquals(600, image.getHeight());
-            Files.write(evidence.resolve(words.get(0) + ".png"), bytes);
+            Files.write(evidence.resolve("plot-" + plotIndex++ + ".png"), bytes);
         }
     }
 }
