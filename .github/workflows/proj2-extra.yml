@@ -1,0 +1,49 @@
+name: CS61B Project 2 Extra
+on:
+  push:
+    branches: [edidada/proj2-extra]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        tool: [maven, gradle]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.2.1'
+      - name: Fetch pinned official course library
+        shell: bash
+        run: |
+          mkdir -p proj2-extra/libs
+          curl --fail --location --retry 3 https://raw.githubusercontent.com/Berkeley-CS61B/library-fa26/7d9a380f3d881630a8cbf6382945a2d27618e728/algs4.jar -o proj2-extra/libs/algs4.jar
+          test "$(git hash-object proj2-extra/libs/algs4.jar)" = e1703efb7a09c244fdfb0ee3d08aa7c28e1b408c
+          mvn -B org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file -Dfile=proj2-extra/libs/algs4.jar -DgroupId=edu.princeton.cs -DartifactId=algs4 -Dversion=fa26-pinned -Dpackaging=jar -DgeneratePom=true
+      - name: Maven original tests
+        if: matrix.tool == 'maven'
+        run: mvn -B -f proj2-extra/pom.xml test
+      - name: Gradle original tests
+        if: matrix.tool == 'gradle'
+        run: gradle -p proj2-extra test --no-daemon
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proj2-extra-${{ matrix.tool }}
+          path: |
+            proj2-extra/target/surefire-reports/
+            proj2-extra/build/test-results/
+            proj2-extra/audio/
+
+
+
+

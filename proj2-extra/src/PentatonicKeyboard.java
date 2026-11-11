@@ -1,29 +1,43 @@
 import edu.princeton.cs.algs4.StdAudio;
 import edu.princeton.cs.algs4.StdDraw;
 
-/** A five-key pentatonic keyboard played with the computer keyboard.
- *  No graphics required — the StdDraw window just needs to exist (and have
- *  focus!) so it can receive your key presses. */
+/** Five independently sustained strings, mixed before advancing their clocks. */
 public class PentatonicKeyboard {
-    // The C major pentatonic scale: C4, D4, E4, G4, A4.
-    // Suggested keys: a s d f g.
-    // TODO: Create one GuitarString per note. An array of GuitarStrings and a
-    //       String of keyboard characters (like "asdfg") will keep your code
-    //       short — charAt and indexOf are your friends.
+    private static final String KEYS = "asdfg";
+    private final GuitarString[] strings = new GuitarString[5];
+
+    public PentatonicKeyboard() {
+        double[] frequencies = {261.63, 293.66, 329.63, 392.00, 440.00};
+        for (int i = 0; i < strings.length; i++) {
+            strings[i] = new GuitarString(frequencies[i]);
+        }
+    }
+
+    public void press(char key) {
+        int index = KEYS.indexOf(key);
+        if (index >= 0) {
+            strings[index].pluck();
+        }
+    }
+
+    public double nextSample() {
+        double sum = 0;
+        for (GuitarString string : strings) {
+            sum += string.sample();
+            string.tic();
+        }
+        return sum;
+    }
 
     static void main() {
-        // StdDraw needs a window to capture keystrokes. This is enough:
+        PentatonicKeyboard keyboard = new PentatonicKeyboard();
         StdDraw.setCanvasSize(400, 100);
         StdDraw.text(0.5, 0.5, "click here, then play: a s d f g");
-
         while (true) {
-            // TODO: If the user has typed a key (StdDraw.hasNextKeyTyped()),
-            //       read it with StdDraw.nextKeyTyped() and pluck the
-            //       matching string (ignore keys that aren't yours).
-
-            // TODO: Compute the superposition of the strings — the sum of
-            //       every string's sample() — and play it with
-            //       StdAudio.play(sum). Then tic() every string.
+            if (StdDraw.hasNextKeyTyped()) {
+                keyboard.press(StdDraw.nextKeyTyped());
+            }
+            StdAudio.play(keyboard.nextSample());
         }
     }
 }
