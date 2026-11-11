@@ -35,6 +35,14 @@ jobs:
       - name: Gradle original tests
         if: matrix.tool == 'gradle'
         run: gradle -p hw05 test --no-daemon
+      - name: Original interactive timing experiment
+        shell: bash
+        run: |
+          if [ '${{ matrix.tool }}' = maven ]; then
+            bash scripts/measure_hw05.sh hw05/target/classes hw05/target/test-classes hw05/libs/algs4.jar hw05/timing
+          else
+            bash scripts/measure_hw05.sh hw05/build/classes/java/main hw05/build/classes/java/test hw05/libs/algs4.jar hw05/timing
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -42,5 +50,6 @@ jobs:
           path: |
             hw05/target/surefire-reports/
             hw05/build/test-results/
+            hw05/timing/
 
 
